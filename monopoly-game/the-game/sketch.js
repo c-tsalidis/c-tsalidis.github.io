@@ -18,6 +18,7 @@
 // AudioPlayer song, coinsSound; // i declare the song and coins sound variables of type audioplayer
 
 let song;
+let coinsSound;
 
 // the game's different scenes, such as the main menu and the game scene, are executed depending on the state of the game.
 // Therefore, if the state is the same as the main menu's state, the main menu scene will be drawn
@@ -82,7 +83,9 @@ let mainCanvas;
 
 function preload()
 {
-  // song = loadSound('data/Midnight_Special.mp3');
+  song = loadSound('data/Midnight_Special.mp3');
+  coinsSound = loadSound('data/Coins_Shuffling.wav');
+  console.log("The songs don't load if they site is not published, therefore the rest of the game will not play");
 }
 
 function setup() // only runs once at the start of the program
@@ -98,7 +101,8 @@ function setup() // only runs once at the start of the program
   // trying it with the processing sound library
   // music = new SoundFile(this, "data/music.wav");
   // music.play();
-  // song.loop();
+  song.loop();
+  coinsSound.play();
 
   // the different images used in the game
   // mainMenuImage = loadImage("data/main-menu-image.png"); // main menu image

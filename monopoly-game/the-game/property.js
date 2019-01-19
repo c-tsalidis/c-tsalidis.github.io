@@ -126,7 +126,7 @@ class Property
           // console.log(player.name + "has gained a total of " + player.moneyGained + "€");
 
           // play the coins sound
-          // coinsSound.play(0);
+          coinsSound.play();
         } else // if the player doesn't have enough money to pay
         {
           statusOfGame = (playerWhoPays.name + " has gone bankrupt!!"); // update the status of the game

@@ -138,7 +138,7 @@ class Player
     // fill(0, 0, 200, 50); // palet it blue with a transparency of 50
     // rect(infoPanelX, infoPanelY, 200, 50);
 
-    // coinsSound.play(0); // play the coin sound
+    coinsSound.play(); // play the coin sound
   }
 
 
@@ -173,7 +173,7 @@ class Player
           property.houseCounter += 1; // increase the amount of houses that the property has by one
           console.log(name + " has added a house in " + property.name);
           statusOfGame = (name + " has added a house in " + property.name); // update the status of the game
-          // coinsSound.play(0); // play the coins shuffling sound
+          coinsSound.play(); // play the coins shuffling sound
         } else // if the player doesn't have enough money to add houses
         {
           statusOfGame = (name + " doesn't have enough money to \n perform this operation"); // update the status of the game
@@ -229,7 +229,7 @@ class Player
           }
         }
         this.propertyToTrade.ownedByPlayer = this.number; // the traded house is now owned by this player
-        // coinsSound.play(); // play the coins shuffling sound
+        coinsSound.play(); // play the coins shuffling sound
       } else // if the player doesn't have enough money to trade
       {
         statusOfGame = (name + " doesn't have enough money to \n perform this operation"); // update the status of the game
