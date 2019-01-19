@@ -90,8 +90,8 @@ function preload()
 
 function setup() // only runs once at the start of the program
 {
-  mainCanvas = createCanvas(1000, 1000); // size of the program's window
-
+  // mainCanvas = createCanvas(1000, 1000); // size of the program's window
+  mainCanvas = createCanvas(windowWidth, windowHeight);
 
   // The music
   // minim = new Minim(this);
