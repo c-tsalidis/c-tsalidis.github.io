@@ -1,0 +1,330 @@
+<!--	This is Christian Tsalidis' website, portfolio and CV // Beta	-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Christian Tsalidis</title>
+
+<!--
+A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+
+The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+-->
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif}
+
+.w3-rightbar {
+    border-right: 6px solid teal!important;
+}
+
+.w3-leftbar {
+    border-left: 6px solid teal!important;
+}
+
+.w3-bottombar {
+    border-bottom: 3px solid teal!important;
+}
+.w3-topbar {
+    border-top: 3px solid teal!important;
+}
+
+
+.w3-dark-grey, .w3-hover-dark-grey:hover, .w3-dark-gray, .w3-hover-dark-gray:hover {
+    color: #fff!important;
+    background-color: teal!important;
+}
+
+	</style>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126190307-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126190307-1');
+</script>
+	<!-- 	End of Google analytics code	-->
+
+
+
+</head>
+
+<body class="w3-light-grey">
+
+<!-- Side navigation -->
+<div class="w3-top">
+<div class="w3-sidebar mobile w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <a href="#aboutMe" class="w3-bar-item w3-button">About Me</a>
+  <a href="#education" class="w3-bar-item w3-button">Education</a>
+  <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+  <a href="#skills" class="w3-bar-item w3-button">Skills</a>
+  <a href="#languages" class="w3-bar-item w3-button">Languages</a>
+  <a href="#interests" class="w3-bar-item w3-button">Interests</a>
+  <a href="encoder-and-decoder-program-example.html" class="w3-bar-item w3-button">Encoder and Decoder Program</a>
+  <a href="The Light Runner WebGl/index.html" class="w3-bar-item w3-button">The Light Runner</a>
+  <a href="monopoly-game/hte-game/index.html" class="w3-bar-item w3-button">My Monopoly game on the web</a>
+</div>
+
+<div class="w3 -row w3-light-grey">
+	<div class="w3-col s1 w3-dark-grey w3-center" style="padding-bottom: 2px;">
+  		<button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+	</div>
+  	<div  class="w3-col s11 w3-dark-grey w3-center">
+    	<h1 style="margin-top: 0px;margin-bottom: 0px;background-color: teal;">About Me</h1>
+	</div>
+</div>
+</div>
+
+
+<div style="margin-top: 85px"></div>
+
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;" id="aboutMe">
+	
+	<!-- The Grid -->
+	<div class="w3-row-padding">
+
+		<!-- Left Column -->
+		<div class="w3-third">
+
+			<div class="w3-white w3-card-4">
+				<div class="w3-display-container" style="padding: 30px">
+				    <div>
+				    	<div style="text-align: center;">
+				        	<h1 class="w3-panel w3-leftbar w3-rightbar w3-round-xlarge">Christian Tsalidis</h1>
+				        	<h4 style="text-shadow: 5px 7px 5px darkgrey">Aspiring new technology developer</h4>	<!-- Style color recommended: style="color: #4F84C4;-->
+				        	<p>Motivated, excellency-seeker, eager to work student</p>   			
+				    	</div>
+				      	<div style="text-align: center;" >
+				        	<div>
+				          		<img src="Images/ChristianPhoto.jpg" class="w3-circle" alt="Avatar" style="border-image-outset: 10px;">
+				        	</div>
+				      	</div>
+				      	<div>
+				        	<div class="w3-display-container st" style="margin-left: 25%;">
+				          		<p><i class="fa fa-envelope"></i> ctsalidis1999@gmail.com</p>
+				          		<p><i class="fa fa-home"></i> Copenhaguen, Denmark</p>
+				          		<details>
+				          			<summary>Social media</summary>
+				          		<p><i class="fa fa-linkedin"></i> linkedin.com/in/christian-tsalidis</p>
+				          		<p><i class="fa fa-twitter"></i> twitter.com/c_tsalidis</p>
+				          		<p><i class="fa fa-instagram"></i> instagram.com/ctsalidis</p>
+				          		<p><i class="fa fa-github w3-hover-opacity"></i> github.com/c-tsalidis</p>
+				          			
+				          		</details>
+				        	</div>
+				      	</div>
+				    </div>
+			    </div>
+			</div>
+			<div class="w3-white w3-card-4" id="skills" style="text-align: center;">
+		    	<h2 class="w3-panel w3-bottombar w3-topbar">Skills</h2>
+		    	<ul class="w3-ul">
+		    		<li>Microsoft Office</li>
+		    		<li>Unity 3D</li>
+		    		<li>JavaScript</li>
+		    		<li>HTML</li>
+		    		<li>C</li>
+		    		<li>Arduino</li>
+		    		<li>Sublime Text 3</li>
+		    		<li>W3CSS Framework</li>
+		    	</ul>
+		    </div>
+		    <div class="w3-white w3-card-4" id="languages" style="text-align: center;">
+		    	<h2  class="w3-panel w3-bottombar w3-topbar">Languages</h2>
+		    	<ul class="w3-ul">
+		    		<li>Spanish</li>
+		    		<div style="margin-left: 5px;margin-right: 5px;">
+			    		<div class="w3-light-grey w3-round-xlarge w3-small">
+			            		<div class="w3-container w3-center w3-round-xlarge w3-dark-grey" style="width:100%">
+			              			<div class="w3-center w3-text-white">Native</div>
+			            		</div>
+			         	</div>
+		         	</div>
+		    		<li>English</li>
+		    		<div style="margin-left: 5px;margin-right: 5px;">
+			    		<div class="w3-light-grey w3-round-xlarge w3-small">
+			            		<div class="w3-container w3-center w3-round-xlarge w3-dark-grey" style="width:90%">
+			              			<div class="w3-center w3-text-white">Fluent</div>
+			            		</div>
+			         	</div>
+		         	</div>
+		    		<li>French</li>
+		    		<div style="margin-left: 5px;margin-right: 5px;">
+			    		<div class="w3-light-grey w3-round-xlarge w3-small">
+			            		<div class="w3-container w3-center w3-round-xlarge w3-dark-grey" style="width:30%">
+			              			<div class="w3-center w3-text-white">Basic</div>
+			            		</div>
+			         	</div>
+		         	</div>
+		    		<li>German</li>
+		    		<div style="margin-left: 5px;margin-right: 5px;padding-bottom: 25px;">
+			    		<div class="w3-light-grey w3-round-xlarge w3-small">
+			            		<div class="w3-container w3-center w3-round-xlarge w3-dark-grey" style="width:20%">
+			              			<div class="w3-center w3-text-white">Basic</div>
+			            		</div>
+			         	</div>
+		         	</div>	
+		    		<div style="margin-top: 10px"></div>
+		    	</ul>
+		    </div>
+		    <div class="w3-white w3-card-4" id="interests" style="text-align: center;">
+		    	<h2 class="w3-panel w3-bottombar w3-topbar">Interests</h2>
+		    	<ul class="w3-ul">
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Robotics: Arduino and Raspberry Pi</li>
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Game development: Unity 3D</li>
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Programming languages: Javascript, C, C++, C#, Python, HTML, CSS</li>
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Media Technology</li>
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Website, game and app development</li>
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Virtual and augmented reality</li>
+		    		<li class="w3-panel w3-light-grey w3-round-xlarge">Interactive designs</li>
+		    	</ul>
+		    </div>
+		</div>
+		<!--	End of left column	-->
+
+		<!--	Right column	-->
+		<div class="w3-twothird">
+		<div class="w3-container">
+
+			<div class="w3-container" id="description">
+		    	<h2 class="w3-panel w3-bottombar";">Who am I?</h2>
+		    	<div>
+					<p>I'm a hardworking, motivated, excellency-seeker and eager to work student.</p>
+					<p>I have interests in interactive development, software development, robotics, and languages.</p>
+					<p>I consider myself an aspiring new technology developer. In my spare time, I tend to learn and gain new skills that may let me help build a better professional working method methodology.</p>
+					<p>What is my main goal? To acquire the necessary knowledge to, with the tools I may have, help build a better world.</p>
+
+					<p>What keywords would define me? • Accurate
+					• Adaptable
+					• Confident
+					• Hard-working
+					• Innovative
+					• Pro-active
+					• Reliable
+					• Responsible
+					• Polite</p>
+
+		    	</div>
+
+		    </div>
+
+		    <div class="w3-container" id="education">
+		    	<h2 class="w3-panel w3-bottombar";">Education</h2>
+		    	<div>
+		    		<p class="w3-panel w3-leftbar">BSc. in Medialogy</p>
+		    		<ul class="w3-ul">
+		    		<li>Aalborg University</li>
+		    		<li>2018 - Present</li>
+		    		<li>Copenhaguen, Denmark</li>	
+		    		<li>Development of interfaces for human - computer interaction adapting them to the user’s needs.</li>
+		    		</ul>
+		    	</div>
+		    	<div>
+		    		<p class="w3-panel w3-leftbar">Bsc. in Industrial Electronics And Automation Engineering</p>
+		    		<ul class="w3-ul">
+		    		<li>Universidad Politécnica de Madrid</li>
+		    		<li>2017 - 2018</li>
+		    		<li>Madrid, Spain</li>	
+		    		</ul>
+		    	</div>
+		    </div>
+
+		    <div class="w3-container" id="projects">
+		    	<h2 class="w3-panel w3-bottombar">Projects</h2>
+		    	<p class="w3-panel w3-leftbar">Augmented Reality (AR) application (2018-Present)</p>
+		    	<ul class="w3-ul">
+		    		<li>Created a program that detects "feature points" in a real life target image followed by the placement
+of virtual environments, objects, etc; combining this way both real and virtual worlds.</li>
+		    		<li>Goal: To understand what AR is and how it works for future projects; as well as its current applications.</li>
+		    		<li>Skills acquired:</li>
+		    		<li>• Fundamentals of AR (using Unity 3D and Vuforia so􀅌wares).
+					<li>• Modelling objetcs and producing visual effects.</li>
+		    	</ul>
+		    	<p class="w3-panel w3-leftbar">Encoder & Decoder of user made alphabets program (2018 - Present) <a href="encoder-and-decoder-program-example.html">Try it</a></p>
+		    	<ul class="w3-ul">
+		    		<li>The user can create his own alphabets and use it to encode his messages. This way only the holders of
+the alphabets may understand it by using the program to decode the message.</li>
+		    		<li>Goal: To provide a way of communicating with targeted and specific people without worrying that it may be
+read by undesired people.</li>
+		    		<li>Skills acquired:</li>
+		    		<li>• Project management.</li>
+					<li>• Javascript, HTML, CSS programming languages.</li>
+		    	</ul>
+			    <p class="w3-panel w3-leftbar">Manual and/or automatic Arduino controlled toy car (2017 – 2018)</p>
+		    	<ul class="w3-ul">
+			    	<li>Learned how to use the Arduino Microcontroller board and how to add hardware to it, e.g: sensors, DC motors, LED lights...</li>
+					<li>Built a toy car controlled with a made from scratch android app via Bluetooth and the ability to park the car automatically in reverse by searching for free parking spots.</li>
+					<li>Added an intelligent parking lot system that shows a message in an LCD display that reads whether or not space is free, accompanied with a green or red light if free or occupied, respectively.</li>
+					<li>Skills acquired:</li>
+					<li>Team leadership.</li>
+					<li>Going from idea, to designing and building, to testing, and finally, to building a prototype.</li>	
+		    	</ul>
+		    	<p class="w3-panel w3-leftbar">The Light Runner (2016 – 2017) <a href="https://www.youtube.com/watch?v=n-RYhuh4wVM">-></a></p>
+		    	<ul class="w3-ul">
+		    		<li>• Created a game by modifying a Unity 3D game tutorial (adapted to my needs and interests).
+					<li>• Released the game to the Google Play App Store.</li>
+					<li>• Brand name and logo development -- JustHavFun</li>
+					<li>Skills acquired:</li>
+					<li>Use of the game development tool Unity 3D.</li>
+					<li>Basics of C# programming language.</li>
+					<li>Managing Social media accounts.</li>
+					<li>Wix website creation.</li>
+		    	</ul>
+		    </div>
+
+		    
+
+		</div>
+		<!--	End of right column	-->
+	</div>		
+</div>
+
+
+<!--	<div style="margin-left:25%">	-->	<!--	25% margin in the left because of the left navigation bar	-->
+
+
+
+<footer class="w3-container w3-dark-grey w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <a href="https://www.linkedin.com/in/christian-tsalidis"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="https://twitter.com/c_tsalidis"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  <a href="https://instagram.com/ctsalidis"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://github.com/c-tsalidis"><i class="fa fa-github w3-hover-opacity"></i></a>
+  <p> Website developed by:  <a href="#">Christian Tsalidis</a>. &copy; . All rights reserved.</p>
+
+</footer>
+
+
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
+<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='89c6a58e29203912b3ba3b62c515d1cde00c5d62a14e130b2fbe97ad976ae236';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+
+<script type="text/javascript">
+	
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

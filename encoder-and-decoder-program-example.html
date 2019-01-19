@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<style>
+	html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif}
+
+.w3-rightbar {
+    border-right: 6px solid teal!important;
+}
+
+.w3-leftbar {
+    border-left: 6px solid teal!important;
+}
+
+.w3-bottombar {
+    border-bottom: 3px solid teal!important;
+}
+.w3-topbar {
+    border-top: 3px solid teal!important;
+}
+
+
+.w3-dark-grey, .w3-hover-dark-grey:hover, .w3-dark-gray, .w3-hover-dark-gray:hover {
+    color: #fff!important;
+    background-color: teal!important;
+}
+
+	</style>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126190307-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126190307-1');
+</script>
+	<!-- 	End of Google analytics code	-->
+
+
+
+</head>
+
+
+
+<body class="w3-light-grey">
+
+
+<!-- Side navigation -->
+<div class="w3-top">
+<div class="w3-sidebar mobile w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <a href="https://c-tsalidis.github.io/" class="w3-bar-item w3-button">About Me, the Developer</a>
+  <a href="The Light Runner WebGl/index.html" class="w3-bar-item w3-button">The Light Runner</a>
+</div>
+
+<div class="w3 -row w3-light-grey">
+	<div class="w3-col s1 w3-dark-grey w3-center" style="padding-bottom: 2px;">
+  		<button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+	</div>
+  	<div  class="w3-col s11 w3-dark-grey w3-center">
+    	<h1 style="margin-top: 0px;margin-bottom: 0px;background-color: teal;">NCODR & DCODR</h1>
+	</div>
+</div>
+</div>
+
+	<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+	
+	<!-- The Grid -->
+	<div class="w3-row-padding">
+
+		<!-- Left Column -->
+		<div class="w3-third">
+
+			<div class="w3-white w3-card-4">
+				<div class="w3-display-container" style="padding: 30px">
+				    <div>
+				    	<div style="text-align: center;">
+				        	<h2 class="w3-panel w3-leftbar w3-rightbar w3-round-xlarge">Welcome back... </h2>
+				    	</div>
+				    	<div>
+				    		<details>
+				    			<summary>Instructions</summary>
+					    		<ol>
+					    			<li>Choose an alphabet.</li>
+					    			<li>Write your message in the first input to encode your message and click the button next to it. The encoded message will appear.</li>
+					    			<li>Copy the encoded message to decode it in the second input and click the button next to it. The decoded message will appear.</li>
+					    		</ol>
+				    		</details>
+				    	</div>
+				    </div>
+			    </div>
+			</div>
+			<div class="w3-white w3-card-4" style="text-align: center; padding-bottom: 20px;padding-top: 20px;margin-top: 20px;">
+			
+				<div>
+					<p>Choose your alphabet:</p>
+					<select onchange="codificador.chooseAlphabet(this.value)">
+						<option value="null"> - </option>
+						<option value="alphabet1">'Letter+'</option>
+						<option value="alphabet2">Letters and numbers</option>
+						<option value="alphabet3">Numbers</option>
+					</select>
+					<p>Be sure to contact me if you have any doubts or if you'd like your own custom alphabet.</p>
+				</div>
+			</div>
+		</div>
+		<!--	End of left column	-->
+
+		<!--	Right column	-->
+		<div class="w3-twothird">
+		<div class="w3-container">
+
+		    <div class="w3-container">
+		    	<h2 class="w3-panel w3-bottombar" style=" margin-top: 35px;">The Program</h2>
+    			<div>
+					<input id="messageInputText" type="text" name="message">
+					<button onclick="handlers.inputTextMessage()">
+						Encode the message and display it
+					</button>
+					<div>
+						<p>Your encoded message will appear here:</p>	
+						<p class="w3-panel w3-leftbar w3-white" id="encodedMessageText"></p>
+		    		</div>
+				</div>
+
+				<div>
+					<input id="encodedMessageTextInput" type="text">
+					<button onclick="handlers.encodedMessageTextInput()">
+						Decode the message and display it
+					</button>
+					<div>
+						<p>Your decoded message will appear here:</p>
+						<p class="w3-panel w3-leftbar w3-white" id = "displayDecodedResultAsString"></p>
+		    		</div>
+				</div>
+			</div>
+		</div>
+
+		</div>		
+			
+	</div>
+				
+
+
+
+<footer class="w3-container w3-dark-grey w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <a href="https://www.linkedin.com/in/christian-tsalidis"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="https://twitter.com/c_tsalidis"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  <a href="https://instagram.com/ctsalidis"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://github.com/c-tsalidis"><i class="fa fa-github w3-hover-opacity"></i></a>
+  <p> Website developed by:  <a href="https://c-tsalidis.github.io/">Christian Tsalidis</a>. &copy; . All rights reserved.</p>
+
+</footer>
+
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
+<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='89c6a58e29203912b3ba3b62c515d1cde00c5d62a14e130b2fbe97ad976ae236';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+
+
+<script type="text/javascript">
+	
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+</script>
+
+
+	<script>
+		
+
+
+// Codificador y descodificador
+
+var codificador =
+{
+	letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+
+	inputLetters: [],
+
+	auxLetters: [],
+
+	message: '',
+
+	encodedText: '',
+
+	encodedMessageAsArray: '',
+
+	decodedText: '',
+
+	encodedTextAsArray: [],
+
+	decodedResultAsArray: [],
+	decodedResultAsString: '',
+
+	backToDefault: function()
+	{
+		this.inputLetters = ['a+','b+','c+','d+','e+','f+','g+','h+','i+','j+','k+ ','l+','m+','n+','ñ+','o+','p+','q+','r+','s+','t+','u+','v+', 'w+', 'x+','y+','z+'];
+		view.displayInputLetters();
+	},
+
+	chooseAlphabet: function(value)
+	{
+		if (value == 'alphabet1')
+		{
+			this.inputLetters = ['a+','b+','c+','d+','e+','f+','g+','h+','i+','j+','k+ ','l+','m+','n+','ñ+','o+','p+','q+','r+','s+','t+','u+','v+', 'w+', 'x+','y+','z+'];
+		}
+		else if( value == 'alphabet2')
+		{
+			this.inputLetters = ['ljsbg', 'akjesbg', 'df645b','fh4','akwlf', 'sejgn', 'skfbwaei', 'wfn', 'aksjdn', 'ijyi', 'lkrd44', '645dsdsd', 'skfn', 's6f', 'sief', 'mbfid', 'sefj', 'sf5262', 'oauwf8', 'oifn6', 'os5', 'ksuebf235', 'iuesf5', 'souef8', 'iyabsf2', 'isud5', '5seg'];	
+		}
+		else if ( value == 'alphabet3')
+		{
+			this.inputLetters = ['5782','848','846','61884','946514','61968498','164984','616848641','6511968','841941896','611','169861','1651','651','12316','6161968','168','146151','81','61616','11','61','6516', '65165','6516981','61651','1651'];
+		}
+		else if(value == 'null')
+		{
+			alert('You must choose an alphabet to encode your message');
+		}
+		view.displayInputLetters();
+	},
+
+	inputLettersLengthCounter: function()
+	{
+		for (var i =0; i < this.inputLetters.length;i++)
+		{
+			console.log(this.inputLetters[i].length);
+			var sizeOfInputLetters = this.inputLetters[i].length;
+		}
+		return sizeOfInputLetters;
+	},
+
+	displayLetters: function()
+	{
+		console.log('My letters are ',this.letters);
+	},
+	displayInputLetters: function()
+	{
+		console.log('My input letters are ',this.inputLetters);
+	},
+
+	switchLetters: function()
+	{
+		for(var i = 0; i < this.letters.length; i++)
+		{
+			this.auxLetters[i] = this.letters[i];
+			//this.letters[i] = this.inputLetters[i];
+		}
+		if(this.letters.length < this.inputLetters.length)
+		{
+			console.log('You cant have more inputLetters than letters');
+			alert('You cant have more inputLetters than letters');
+		}
+		this.displayLetters();
+		this.displayInputLetters();
+	},
+
+	splitStringIntoArray: function()
+	{
+
+    	var str = codificador.encodedText;
+		var re = ';';
+		
+		codificador.encodedTextAsArray = str.split(re);
+		console.log(codificador.encodedTextAsArray);
+
+	},
+
+	readMessage: function()
+	{
+
+		encodeAndDecode.encode(codificador.message);
+	},
+
+
+
+	displayAuxLetters: function()
+	{
+		console.log(this.auxLetters);
+	},
+
+};
+
+codificador.auxLetters = codificador.letters;
+
+
+
+var handlers =
+{
+	displayLetters: function()
+	{
+		codificador.displayLetters();
+		view.displayTextAsDiv(codificador.letters);
+	},
+	displayInputLetters: function()
+	{
+		codificador.displayInputLetters();
+		view.displayInputLetters();
+	},
+
+	displayAuxLetters: function()
+	{
+		codificador.displayAuxLetters();
+		view.displayAuxTextLetters();
+	},
+
+
+	addLetters: function()
+	{
+		var addLettersTextInput = document.getElementById('addLettersTextInput');
+		codificador.addLetters(addLettersTextInput.value);
+		addLettersTextInput.value = '';
+		codificador.displayLetters();
+	},
+	addInputLetters: function()
+	{
+		var addLettersTextInput = document.getElementById('addInputLettersTextInput');
+		codificador.addInputLetters(addInputLettersTextInput.value);
+		addInputLettersTextInput.value = '';
+		codificador.displayInputLetters();
+	},
+	changeLetters: function()
+	{
+		var changeLettersNumberInput = document.getElementById('changeLettersNumberInput');
+		var changeLettersTextInput = document.getElementById('changeLettersTextInput');
+		codificador.changeLetters(changeLettersNumberInput.valueAsNumber, changeLettersTextInput.value);
+		changeLettersNumberInput.value = '';
+		changeLettersTextInput.value = '';
+		codificador.displayLetters();
+	},
+
+	changeInputLetters: function()
+	{
+		var changeInputLettersNumberInput = document.getElementById('changeInputLettersNumberInput');
+		var changeInputLettersTextInput = document.getElementById('changeInputLettersTextInput');
+		codificador.changeInputLetters(changeInputLettersNumberInput.valueAsNumber, changeInputLettersTextInput.value);
+		changeInputLettersNumberInput.value = '';
+		changeInputLettersTextInput.value = '';
+		codificador.displayInputLetters();
+	},
+
+	deleteLetters: function()
+	{
+		codificador.deleteLetters(position);
+	},
+
+	switchLetters: function()
+	{
+		codificador.switchLetters();
+	},
+
+	displayEncodedText: function()
+	{
+		codificador.readMessage();
+		view.displayEncodedText(codificador.message);
+	},
+
+
+	inputTextMessage: function()
+	{
+
+		var messageInputText = document.getElementById('messageInputText');
+		codificador.message = messageInputText.value;
+		
+		this.displayEncodedText();
+	},
+
+	encodedMessageTextInput: function()
+	{
+
+		var encodedMessageTextInput = document.getElementById('encodedMessageTextInput').value;// + ';';
+		codificador.encodedText = encodedMessageTextInput;
+		codificador.splitStringIntoArray();
+
+		
+		var decodedResultAsString = encodeAndDecode.decode(codificador.encodedTextAsArray);
+		view.displayDecodedResultAsString(decodedResultAsString);
+
+		//view.displayTextAsDiv(codificador.decodedResultAsString);
+
+	},
+
+};
+
+var view = 
+{
+
+	displayTextAsDiv: function(message)
+	{
+		
+		var displayTextAsDiv = document.createElement('p');
+		var node = document.createTextNode(message);
+		var div = document.getElementById('displayTextAsDiv');
+		div.appendChild(node);
+	},
+
+	displayEncodedText: function()
+	{
+
+		var message = codificador.message;
+		var newMessage = encodeAndDecode.encode(message);
+		var encodedText = newMessage;
+		codificador.encodedText = encodedText;
+		
+		var encodedMessageTextDiv = document.getElementById('encodedMessageText');
+		encodedMessageTextDiv.textContent = encodedText;
+
+	},
+
+
+	displayDecodedResultAsString: function(decodedResultAsString)
+	{
+/*
+		var displayedText = decodedResultAsString;
+		var displayTextAsDiv = document.createElement('p');
+		var node = document.createTextNode(displayedText);
+		var div = document.getElementById('displayDecodedResultAsString');
+		div.appendChild(node);
+*/
+		var x = document.getElementById("displayDecodedResultAsString");
+		x.innerHTML = decodedResultAsString;
+
+	},
+	
+
+	displayAuxTextLetters: function()
+	{
+		
+		
+		var createOl = document.querySelector('ol'); // 'ul' is taken from the .html file
+													// put putside of the code to not create a new ul for every 'i'
+		createOl.innerHTML = '';
+
+		var createLi = document.createElement('li');
+
+		for (var i=0; i < codificador.auxLetters.length; i++)
+		{
+			var createLi = document.createElement('li');
+			var auxLetters = codificador.auxLetters[i];
+
+			//createLi.id = position; // this creates a unique id to each li, so that we can access each li and delete it
+			createLi.textContent = auxLetters;
+			createOl.appendChild(createLi);
+		}
+	},
+
+	displayInputLetters: function() // it will show the split new message at the function splitIntoArray
+	{
+		codificador.inputLettersLengthCounter();
+		var createOl = document.querySelector('ol'); // 'ul' is taken from the .html file
+													// put putside of the code to not create a new ul for every 'i'
+		createOl.innerHTML = '';
+
+		var createLi = document.createElement('li');
+
+		for (var i=0; i < codificador.inputLetters.length; i++)
+		{
+			var createLi = document.createElement('li');
+			var inputLetters = codificador.inputLetters[i];
+
+			//createLi.id = position; // this creates a unique id to each li, so that we can access each li and delete it
+			createLi.textContent = inputLetters;
+			createOl.appendChild(createLi);
+		}
+	},
+};
+
+
+
+var encodeAndDecode = {
+
+encode: function(message)
+{
+
+	var newMessage = [];
+
+	for(var i = 0; i <= message.length; i++)
+	{
+    	switch(message[i])
+	    {
+	        case("a"):
+	        case("A"):
+	        	newMessage[i] = codificador.inputLetters[0];
+	        break;
+	        case("B"):
+	        case("b"):
+	        	newMessage[i] = codificador.inputLetters[1];
+	        break;
+	        case("c"):
+	        case("C"):
+	        	newMessage[i] = codificador.inputLetters[2];
+	        break;
+	        case ('d'):
+			case ('D'): newMessage[i] = codificador.inputLetters[3];
+					 break;
+			case ('e'):
+			case ('E'): newMessage[i] = codificador.inputLetters[4];
+					 break;
+			case ('f'):
+			case ('F'): newMessage[i] = codificador.inputLetters[5];
+					 break;
+			case ('g'):
+			case ('G'): newMessage[i] = codificador.inputLetters[6];
+					 break;
+			case ('h'):
+			case ('H'): newMessage[i] = codificador.inputLetters[7];
+					 break;
+			case ('i'):
+			case ('I'): newMessage[i] = codificador.inputLetters[8];
+					 break;
+			case ('j'):
+			case ('J'): newMessage[i] = codificador.inputLetters[9];
+					 break;
+			case ('k'):
+			case ('K'): newMessage[i] = codificador.inputLetters[10];
+					 break;
+			case ('l'):
+			case ('L'): newMessage[i] = codificador.inputLetters[11];
+					 break;
+			case ('m'):
+			case ('M'): newMessage[i] = codificador.inputLetters[12];
+					 break;
+			case ('n'):
+			case ('N'): newMessage[i] = codificador.inputLetters[13];
+					 break;
+			case ('ñ'):
+			case ('Ñ'): newMessage[i] = codificador.inputLetters[14];
+					 break;
+			case ('o'):
+			case ('O'): newMessage[i] = codificador.inputLetters[15];
+					 break;
+			case ('p'):
+			case ('P'): newMessage[i] = codificador.inputLetters[16];
+					 break;
+			case ('q'):
+			case ('Q'): newMessage[i] = codificador.inputLetters[17];
+					 break;
+			case ('r'):
+			case ('R'): newMessage[i] = codificador.inputLetters[18];
+					 break;
+			case ('s'):
+			case ('S'): newMessage[i] = codificador.inputLetters[19];
+					 break;
+			case ('t'):
+			case ('T'): newMessage[i] = codificador.inputLetters[20];
+					 break;
+			case ('u'):
+			case ('U'): newMessage[i] = codificador.inputLetters[21];
+					 break;
+			case ('v'):
+			case ('V'): newMessage[i] = codificador.inputLetters[22];
+					 break;
+			case ('w'):
+			case ('W'): newMessage[i] = codificador.inputLetters[23];
+					 break;
+			case ('x'):
+			case ('X'): newMessage[i] = codificador.inputLetters[24];
+					 break;
+			case ('y'):
+			case ('Y'): newMessage[i] = codificador.inputLetters[25];
+					 break;
+			case ('z'):
+			case ('Z'): newMessage[i] = codificador.inputLetters[26];
+					 break;
+
+			case ('1'): newMessage[i] = '1';
+					 break;
+			case ('2'): newMessage[i] = '2';
+					 break;
+			case ('3'): newMessage[i] = '3';
+					 break;
+			case ('4'): newMessage[i] = '4';
+			break;
+			case ('5'): newMessage[i] = '5';
+			break;
+			case ('6'): newMessage[i] = '6';
+			break;
+			case ('7'): newMessage[i] = '7';
+			break;
+			case ('8'): newMessage[i] = '8';
+			break;
+			case ('9'): newMessage[i] = '9';
+			break;
+			case ('0'): newMessage[i] = '0';
+			break;
+
+			case (' '): newMessage[i] = ' ';
+					 break;
+			case ('\n'):
+			case ('\r'): newMessage[i] = ' ';
+					 break;
+			case ('<'): newMessage[i] = '<';
+					 break;
+			case ('>'): newMessage[i] = '>';
+					 break;
+			case ('='): newMessage[i] = '=';
+					 break;
+			case (','): newMessage[i] = ',';
+					 break;
+			case ('.'): newMessage[i] = '.';
+					 break;
+			case (';'): newMessage[i] = ';';
+					 break;
+			case ('*'): newMessage[i] = '*';
+					 break;
+			case ('/'): newMessage[i] = '/';
+					 break;
+			case ('+'): newMessage[i] = '+';
+					 break;
+			case ('-'): newMessage[i] = '-';
+					 break;
+			case ('_'): newMessage[i] = '_';
+					 break;
+			case ('?'): newMessage[i] = '?';
+					 break;
+			case ('!'): newMessage[i] = '!';
+					 break;
+			default: newMessage[i] = '';
+	   }
+    }
+
+	    for (var k =0; k< newMessage.length;k++)
+	    {
+	    	newMessage[k] = newMessage[k] + ';';
+	    }
+	    console.log(newMessage.join(''));
+	    return newMessage.join('');
+
+},
+
+	decode: function(encodedMessage)
+	{
+
+		var decodedMessage = [];
+
+		for(var i = 0; i <= encodedMessage.length; i++)
+		{
+	    	switch(encodedMessage[i])
+		    {
+		        
+		        case(codificador.inputLetters[0]):
+		        	decodedMessage[i] = codificador.auxLetters[0];
+		        break;
+		       
+		        case(codificador.inputLetters[1]):
+		        	decodedMessage[i] = codificador.auxLetters[1];
+		        break;
+		       
+		        case(codificador.inputLetters[2]):
+		        	decodedMessage[i] = codificador.auxLetters[2];
+		        break;
+		       
+				case (codificador.inputLetters[3]): decodedMessage[i] = codificador.auxLetters[3];
+						 break;
+			
+				case (codificador.inputLetters[4]): decodedMessage[i] = codificador.auxLetters[4];
+						 break;
+			
+				case (codificador.inputLetters[5]): decodedMessage[i] = codificador.auxLetters[5];
+						 break;
+				
+				case (codificador.inputLetters[6]): decodedMessage[i] = codificador.auxLetters[6];
+						 break;
+				case (codificador.inputLetters[7]): decodedMessage[i] = codificador.auxLetters[7];
+						 break;
+				case (codificador.inputLetters[8]):
+					decodedMessage[i] = codificador.auxLetters[8];
+						 break;
+				case (codificador.inputLetters[9]):
+					decodedMessage[i] = codificador.auxLetters[9];
+						 break;
+				case (codificador.inputLetters[10]):
+					decodedMessage[i] = codificador.auxLetters[10];
+						 break;
+				case (codificador.inputLetters[11]):
+					decodedMessage[i] = codificador.auxLetters[11];
+						 break;
+				case (codificador.inputLetters[12]): decodedMessage[i] = codificador.auxLetters[12];
+						 break;
+				
+				case (codificador.inputLetters[13]): decodedMessage[i] = codificador.auxLetters[13];
+						 break;
+				
+				case (codificador.inputLetters[14]): decodedMessage[i] = codificador.auxLetters[14];
+						 break;
+				
+				case (codificador.inputLetters[15]): decodedMessage[i] = codificador.auxLetters[15];
+						 break;
+				
+				case (codificador.inputLetters[16]): decodedMessage[i] = codificador.auxLetters[16];
+						 break;
+				case (codificador.inputLetters[17]):
+				 decodedMessage[i] = codificador.auxLetters[17];
+						 break;
+				case (codificador.inputLetters[18]):
+				 decodedMessage[i] = codificador.auxLetters[18];
+						 break;
+				case (codificador.inputLetters[19]):
+				 decodedMessage[i] = codificador.auxLetters[19];
+						 break;
+				case (codificador.inputLetters[20]):
+				 decodedMessage[i] = codificador.auxLetters[20];
+						 break;
+				case (codificador.inputLetters[21]):
+				 decodedMessage[i] = codificador.auxLetters[21];
+						 break;
+				
+				case (codificador.inputLetters[22]): decodedMessage[i] = codificador.auxLetters[22];
+						 break;
+				
+				case (codificador.inputLetters[23]): decodedMessage[i] = codificador.auxLetters[23];
+						 break;
+				case (codificador.inputLetters[24]):
+				 decodedMessage[i] = codificador.auxLetters[24];
+						 break;
+				case (codificador.inputLetters[25]):
+				 decodedMessage[i] = codificador.auxLetters[25];
+						 break;
+				case (codificador.inputLetters[26]):
+				 decodedMessage[i] = codificador.auxLetters[26];
+						 break;		 
+
+
+				case ('1'): decodedMessage[i] = '1';
+					 break;
+				case ('2'): decodedMessage[i] = '2';
+						 break;
+				case ('3'): decodedMessage[i] = '3';
+						 break;
+				case ('4'): decodedMessage[i] = '4';
+				break;
+				case ('5'): decodedMessage[i] = '5';
+				break;
+				case ('6'): decodedMessage[i] = '6';
+				break;
+				case ('7'): decodedMessage[i] = '7';
+				break;
+				case ('8'): decodedMessage[i] = '8';
+				break;
+				case ('9'): decodedMessage[i] = '9';
+				break;
+				case ('0'): decodedMessage[i] = '0';
+				break;
+
+				case (' '): decodedMessage[i] = ' ';
+						 break;
+				case ('\n'):
+				case ('\r'): decodedMessage[i] = ' ';
+						 break;
+				case ('<'): decodedMessage[i] = '<';
+						 break;
+				case ('>'): decodedMessage[i] = '>';
+						 break;
+				case ('='): decodedMessage[i] = '=';
+						 break;
+				case (','): decodedMessage[i] = ',';
+						 break;
+				case ('.'): decodedMessage[i] = '.';
+						 break;
+				case (';'): decodedMessage[i] = ';';
+						 break;
+				case ('*'): decodedMessage[i] = '*';
+						 break;
+				case ('/'): decodedMessage[i] = '/';
+						 break;
+				case ('+'): decodedMessage[i] = '+';
+						 break;
+				case ('-'): decodedMessage[i] = '-';
+						 break;
+				case ('_'): decodedMessage[i] = '_';
+						 break;
+				case ('?'): decodedMessage[i] = '?';
+						 break;
+				case ('!'): decodedMessage[i] = '!';
+						 break;
+				//default: decodedMessage[i] = '';
+		   }
+	    }
+	    console.log(decodedMessage.join(''));
+	    return decodedMessage.join('');    
+
+	},
+}
+
+
+
+	</script>
+
+</body>
+</html>
