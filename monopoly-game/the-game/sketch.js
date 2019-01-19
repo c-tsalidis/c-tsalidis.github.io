@@ -82,7 +82,7 @@ let mainCanvas;
 
 function preload()
 {
-  song = loadSound('data/Midnight_Special.mp3');
+  // song = loadSound('data/Midnight_Special.mp3');
 }
 
 function setup() // only runs once at the start of the program
@@ -98,7 +98,7 @@ function setup() // only runs once at the start of the program
   // trying it with the processing sound library
   // music = new SoundFile(this, "data/music.wav");
   // music.play();
-  song.loop();
+  // song.loop();
 
   // the different images used in the game
   // mainMenuImage = loadImage("data/main-menu-image.png"); // main menu image
