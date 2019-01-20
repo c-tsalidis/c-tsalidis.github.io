@@ -71,6 +71,7 @@ function setup()
   var starsBackgroundCanvas = createCanvas(windowWidth, windowHeight);
   if(width > 700)
   {
+  	starsBackgroundCanvas.style.display = "none";
   	state = starsBackgroundState;
   	for(let i = 0; i < stars.length; i++)
 	{
@@ -82,14 +83,8 @@ function setup()
   }
   else
   {
+  	for(let i = 0; i < stars.length;i++) stars[i] = new Star();
   	state = starsBackgroundState;
-	for(let i = 0; i < stars.length; i++)
-	{
-	let x = floor(random(-width, width));
-	let y = floor(random(-height, height));
-	let z = floor(random(0, width));
-		stars[i] = new Star(x, y, z); 
-	}
   }
 	
   // starsBackgroundCanvas.position(0,0);
@@ -118,5 +113,4 @@ function draw()
 	{
 		background(0);
 	}
-
 }
