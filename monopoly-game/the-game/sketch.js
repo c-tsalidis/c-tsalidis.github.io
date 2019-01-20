@@ -99,7 +99,7 @@ function windowResized()
 function setup() // only runs once at the start of the program
 {
   // mainCanvas = createCanvas(1000, 1000); // size of the program's window
-  mainCanvas = createCanvas(windowWidth, windowHeight);
+  mainCanvas = createCanvas(1000, 1000);
   // mainCanvas.position(0, 0);
   // mainCanvas.style('z-index', '-1');
 
