@@ -62,36 +62,53 @@ window.addEventListener('scroll', function()
 });
 */
 
-
+let state = 0;
+let starsBackgroundState = 0;
+let plainBackground = 1;
 
 function setup()
 {
   var starsBackgroundCanvas = createCanvas(windowWidth, windowHeight);
+  if(width > 700)
+  {
+  	state = starsBackgroundState;
+	for(let i = 0; i < stars.length; i++)
+	{
+	let x = floor(random(-width, width));
+	let y = floor(random(-height, height));
+	let z = floor(random(0, width));
+		stars[i] = new Star(x, y, z); 
+	}
+  }
+  else
+  {
+  	state = starsBackgroundState;
+  }
   // starsBackgroundCanvas.position(0,0);
   // starsBackgroundCanvas.position = "fixed";
   // starsBackgroundCanvas.style('z-index', '-1');
 
 
-	for(let i = 0; i < stars.length; i++)
-  {
-    let x = floor(random(-width, width));
-    let y = floor(random(-height, height));
-    let z = floor(random(0, width));
-   	stars[i] = new Star(x, y, z); 
-  }
 }
 
 function draw()
 {
-  background(20, 75);
-  translate(width/2, height/2);
-  
-  
-  for(let i = 0; i < stars.length; i++)
-  {
-    let star = stars[i];
-    star.show();
-    star.update();
-  }
-}
+	if (state === starsBackgroundState) 
+	{
+	  background(20, 75);
+	  translate(width/2, height/2);
+	  
+	  
+	  for(let i = 0; i < stars.length; i++)
+	  {
+	    let star = stars[i];
+	    star.show();
+	    star.update();
+	  }
+	}
+	else
+	{
+		background(0);
+	}
 
+}
