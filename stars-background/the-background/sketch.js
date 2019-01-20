@@ -72,6 +72,11 @@ function setup()
   if(width > 700)
   {
   	state = starsBackgroundState;
+  }
+  else
+  {
+  	state = starsBackgroundState;
+  }
 	for(let i = 0; i < stars.length; i++)
 	{
 	let x = floor(random(-width, width));
@@ -79,11 +84,6 @@ function setup()
 	let z = floor(random(0, width));
 		stars[i] = new Star(x, y, z); 
 	}
-  }
-  else
-  {
-  	state = starsBackgroundState;
-  }
   // starsBackgroundCanvas.position(0,0);
   // starsBackgroundCanvas.position = "fixed";
   // starsBackgroundCanvas.style('z-index', '-1');
