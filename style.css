@@ -1,5 +1,7 @@
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
-	p {font-family: "Calibri", sans-serif, color: white;}
+html,body,h1,h2,h3,h4,h5,h6 {font-family: calibri, sans-serif;}
+	ul,ol,li,p {font-family: calibri, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;}
 
 .w3-rightbar {
     border-right: 6px solid #292828!important;
@@ -44,7 +46,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
 /* THIS IS THE MAIN CARD IN THE HOMEPAGE --> THE ONE WITH MY PIC AND NAME...*/
 /* Center website */
 .main {
-  max-width: 500px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -60,8 +62,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
 
 /* Create three equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 50%;
+  float: center;
+  width: 25%;
 }
 
 /* Clear floats after rows */ 
