@@ -2,18 +2,18 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
 	p {font-family: "Calibri", sans-serif, color: white;}
 
 .w3-rightbar {
-    border-right: 6px solid gray!important;
+    border-right: 6px solid #292828!important;
 }
 
 .w3-leftbar {
-    border-left: 6px solid gray!important;
+    border-left: 6px solid #292828!important;
 }
 
 .w3-bottombar {
-    border-bottom: 3px solid gray!important;
+    border-bottom: 3px solid #292828!important;
 }
 .w3-topbar {
-    border-top: 3px solid gray!important;
+    border-top: 3px solid #292828!important;
 }
 
 .w3-light-grey {
@@ -43,7 +43,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 /* Track */
@@ -53,7 +53,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
+  -webkit-border-radius: 10px;
 }
 
 /* Handle on hover */
