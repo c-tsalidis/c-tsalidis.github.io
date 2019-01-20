@@ -1,0 +1,62 @@
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
+	p {font-family: "Calibri", sans-serif, color: white;}
+
+.w3-rightbar {
+    border-right: 6px solid gray!important;
+}
+
+.w3-leftbar {
+    border-left: 6px solid gray!important;
+}
+
+.w3-bottombar {
+    border-bottom: 3px solid gray!important;
+}
+.w3-topbar {
+    border-top: 3px solid gray!important;
+}
+
+.w3-light-grey {
+	color: white;
+}
+
+.w3-dark-grey, .w3-hover-dark-grey:hover, .w3-dark-gray, .w3-hover-dark-gray:hover {
+    color: #fff!important;
+    background-color: #292828!important;
+}
+
+.w3-white {
+	background-color: #383838;
+	color: white;
+}
+
+
+#defaultCanvas0 {
+	left: 0px;top: 0px;z-index: -1;position: fixed;
+}
+
+.w3-circle {
+	border-style: solid;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

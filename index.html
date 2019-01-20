@@ -17,31 +17,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-	html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif}
-
-.w3-rightbar {
-    border-right: 6px solid teal!important;
-}
-
-.w3-leftbar {
-    border-left: 6px solid teal!important;
-}
-
-.w3-bottombar {
-    border-bottom: 3px solid teal!important;
-}
-.w3-topbar {
-    border-top: 3px solid teal!important;
-}
-
-
-.w3-dark-grey, .w3-hover-dark-grey:hover, .w3-dark-gray, .w3-hover-dark-gray:hover {
-    color: #fff!important;
-    background-color: teal!important;
-}
-
-	</style>
+	<link rel="stylesheet" href="style.css">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -59,7 +35,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 
 </head>
 
-<body class="w3-light-grey">
+<body>
 
 <!-- Side navigation -->
 <div class="w3-top">
@@ -82,7 +58,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
   		<button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
 	</div>
   	<div  class="w3-col s11 w3-dark-grey w3-center">
-    	<h1 style="margin-top: 0px;margin-bottom: 0px;background-color: teal;">About Me</h1>
+    	<h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;">About Me</h1>
 	</div>
 </div>
 </div>
@@ -201,14 +177,14 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 		<div class="w3-container">
 
 			<div class="w3-container" id="description">
-		    	<h2 class="w3-panel w3-bottombar";">Who am I?</h2>
+		    	<h2 class="w3-panel w3-bottombar"  style="color: white;">Who am I?</h2>
 		    	<div>
-					<p>I'm a hardworking, motivated, excellency-seeker and eager to work student.</p>
-					<p>I have interests in interactive development, software development, robotics, and languages.</p>
-					<p>I consider myself an aspiring new technology developer. In my spare time, I tend to learn and gain new skills that may let me help build a better professional working method methodology.</p>
-					<p>What is my main goal? To acquire the necessary knowledge to, with the tools I may have, help build a better world.</p>
+					<p  style="color: white;">I'm a hardworking, motivated, excellency-seeker and eager to work student.</p>
+					<p  style="color: white;">I have interests in interactive development, software development, robotics, and languages.</p>
+					<p  style="color: white;">I consider myself an aspiring new technology developer. In my spare time, I tend to learn and gain new skills that may let me help build a better professional working method methodology.</p>
+					<p  style="color: white;">What is my main goal? To acquire the necessary knowledge to, with the tools I may have, help build a better world.</p>
 
-					<p>What keywords would define me? • Accurate
+					<p  style="color: white;">What keywords would define me? • Accurate
 					• Adaptable
 					• Confident
 					• Hard-working
@@ -222,8 +198,8 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 
 		    </div>
 
-		    <div class="w3-container" id="education">
-		    	<h2 class="w3-panel w3-bottombar";">Education</h2>
+		    <div class="w3-container" id="education"  style="color: white;">
+		    	<h2 class="w3-panel w3-bottombar">Education</h2>
 		    	<div>
 		    		<p class="w3-panel w3-leftbar">BSc. in Medialogy</p>
 		    		<ul class="w3-ul">
@@ -243,7 +219,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 		    	</div>
 		    </div>
 
-		    <div class="w3-container" id="projects">
+		    <div class="w3-container" id="projects"  style="color: white;">
 		    	<h2 class="w3-panel w3-bottombar">Projects</h2>
 		    	<p class="w3-panel w3-leftbar">Augmented Reality (AR) application (2018-Present)</p>
 		    	<ul class="w3-ul">
@@ -298,7 +274,7 @@ read by undesired people.</li>
 
 
 
-<footer class="w3-container w3-dark-grey w3-center w3-margin-top">
+<footer class="w3-container w3-dark-grey w3-center w3-margin-top" style="background-color: #252525">
   <p>Find me on social media.</p>
   <a href="https://www.linkedin.com/in/christian-tsalidis"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   <a href="https://twitter.com/c_tsalidis"><i class="fa fa-twitter w3-hover-opacity"></i></a>
@@ -325,6 +301,18 @@ function w3_close() {
 }
 
 </script>
+
+
+
+<!--  Stars background  -->
+
+<script src="stars-background/p5.min.js"></script>
+<script src="stars-background/addons/p5.dom.min.js"></script>
+<script src="stars-background/addons/p5.sound.min.js"></script>
+<script src="stars-background/the-background/sketch.js"></script>
+
+<!-- End of stars background -->
+
 
 </body>
 </html>
