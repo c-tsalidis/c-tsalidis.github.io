@@ -41,6 +41,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
 
 
 
+/* THIS IS THE MAIN CARD IN THE HOMEPAGE --> THE ONE WITH MY PIC AND NAME...*/
+/* Center website */
+.main {
+  max-width: 500px;
+  margin: auto;
+}
+
 .row {
   margin: 8px -16px;
 }
@@ -54,7 +61,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33%;
+  width: 50%;
 }
 
 /* Clear floats after rows */ 
@@ -83,6 +90,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Calibri", sans-serif, color: white;}
     width: 100%;
   }
 }
+/*  END OF THE MAIN CARD OF THE HOMEPAGE  */
 
 
 
