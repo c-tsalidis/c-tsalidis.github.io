@@ -34,15 +34,20 @@
 
 <!-- Side navigation -->
 <div class="w3-top">
-<div class="w3-sidebar mobile w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large"
-  onclick="w3_close()">Close &times;</button>
-  <a href="index.html" class="w3-bar-item w3-button">About Me, the Developer</a>
+
+<div id="menuOverlayNav" class="overlay">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">About Me</a>
+    <a href="encoder-and-decoder-program-example.html">Encoder and Decoder Program</a>
+  	<a href="The Light Runner WebGl/index.html">The Light Runner</a>
+  	<a href="monopoly-game/the-game/index.html">My Monopoly game on the web</a>
+  </div>
 </div>
 
 <div class="w3 -row w3-light-grey">
 	<div class="w3-col s12 w3-dark-grey w3-center" style="padding-bottom: 2px;">
-		<h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776; </button>Encoder and Decoder program</h1>
+		<h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav" class="w3-button w3-xlarge" onclick="openNav()">&#9776; </button>Encoder and Decoder program</h1>
 		
 	</div>
   	<div  class="w3-col s11 w3-dark-grey w3-center">
@@ -149,16 +154,13 @@
 <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='89c6a58e29203912b3ba3b62c515d1cde00c5d62a14e130b2fbe97ad976ae236';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
 
 
-<script type="text/javascript">
-	
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-}
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
 
-</script>
+
+<!-- menu overlay funcitionality  -->
+<script src="menuOverlay.js"></script>
+<!--  end of menu overlay funcitionality -->
+
+
 
 
 	<script>
