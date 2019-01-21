@@ -252,7 +252,9 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 
 		    <div class="w3-container" id="projects"  style="color: white;">
 		    	<h2 class="w3-panel w3-bottombar">Projects</h2>
-		    	<p class="w3-panel w3-leftbar">Augmented Reality (AR) application (2018-Present)</p>
+		    	<!-- <p class="w3-panel w3-leftbar">Augmented Reality (AR) application (2018-Present)</p>  -->
+		    	<button class="accordion w3-leftbar">Augmented Reality (AR) application (2018-Present)</button>
+		    	<div class="panel">
 		    	<ul class="w3-ul">
 		    		<li>Created a program that detects "feature points" in a real life target image followed by the placement
 of virtual environments, objects, etc; combining this way both real and virtual worlds.</li>
@@ -261,17 +263,23 @@ of virtual environments, objects, etc; combining this way both real and virtual 
 		    		<li>• Fundamentals of AR (using Unity 3D and Vuforia so􀅌wares).
 					<li>• Modelling objetcs and producing visual effects.</li>
 		    	</ul>
-		    	<p class="w3-panel w3-leftbar">Encoder & Decoder of user made alphabets program (2018 - Present) <a href="encoder-and-decoder-program-example.html">Try it</a></p>
+		    	</div>
+		    	<!-- <p class="w3-panel w3-leftbar">Encoder & Decoder of user made alphabets program (2018 - Present) <a href="encoder-and-decoder-program-example.html">Try it</a></p> -->
+		    	<button class="accordion w3-leftbar">Encoder & Decoder of user made alphabets program (2018 - Present) </button>
+		    	<div class="panel">
 		    	<ul class="w3-ul">
 		    		<li>The user can create his own alphabets and use it to encode his messages. This way only the holders of
-the alphabets may understand it by using the program to decode the message.</li>
+the alphabets may understand it by using the program to decode the message. <a href="encoder-and-decoder-program-example.html" style="text-decoration: none;"> - Try it</a></li>
 		    		<li>Goal: To provide a way of communicating with targeted and specific people without worrying that it may be
 read by undesired people.</li>
 		    		<li>Skills acquired:</li>
 		    		<li>• Project management.</li>
 					<li>• Javascript, HTML, CSS programming languages.</li>
 		    	</ul>
-			    <p class="w3-panel w3-leftbar">Manual and/or automatic Arduino controlled toy car (2017 – 2018)</p>
+		    	</div>
+			    <!--  <p class="w3-panel w3-leftbar">Manual and/or automatic Arduino controlled toy car (2017 – 2018)</p>   -->
+			    <button class="accordion w3-leftbar">Manual and/or automatic Arduino controlled toy car (2017 – 2018)</button>
+		    	<div class="panel">
 		    	<ul class="w3-ul">
 			    	<li>Learned how to use the Arduino Microcontroller board and how to add hardware to it, e.g: sensors, DC motors, LED lights...</li>
 					<li>Built a toy car controlled with a made from scratch android app via Bluetooth and the ability to park the car automatically in reverse by searching for free parking spots.</li>
@@ -280,17 +288,21 @@ read by undesired people.</li>
 					<li>Team leadership.</li>
 					<li>Going from idea, to designing and building, to testing, and finally, to building a prototype.</li>	
 		    	</ul>
-		    	<p class="w3-panel w3-leftbar">The Light Runner (2016 – 2017) <a href="https://www.youtube.com/watch?v=n-RYhuh4wVM">-></a></p>
+		    	</div>
+		    	<!-- <p class="w3-panel w3-leftbar">The Light Runner (2016 – 2017) <a href="https://www.youtube.com/watch?v=n-RYhuh4wVM">-></a></p>  -->
+		    	<button class="accordion w3-leftbar">Manual and/or automatic Arduino controlled toy car (2017 – 2018)</button>
+		    	<div class="panel">
 		    	<ul class="w3-ul">
-		    		<li>• Created a game by modifying a Unity 3D game tutorial (adapted to my needs and interests).
-					<li>• Released the game to the Google Play App Store.</li>
-					<li>• Brand name and logo development -- JustHavFun</li>
+		    		<li>Created a game by modifying a Unity 3D game tutorial (adapted to my needs and interests).
+					<li>Released the game to the Google Play App Store.</li>
+					<li>Brand name and logo development -- JustHavFun</li>
 					<li>Skills acquired:</li>
 					<li>Use of the game development tool Unity 3D.</li>
 					<li>Basics of C# programming language.</li>
 					<li>Managing Social media accounts.</li>
 					<li>Wix website creation.</li>
 		    	</ul>
+		    	<div>
 		    </div>
 
 		    
@@ -304,16 +316,30 @@ read by undesired people.</li>
 <!--	<div style="margin-left:25%">	-->	<!--	25% margin in the left because of the left navigation bar	-->
 
 
-
-<footer class="w3-container w3-dark-grey w3-center w3-margin-top" style="background-color: #252525">
-  <p>Find me on social media.</p>
+<footer class="content"
+        style="
+          color:#ddd;
+          background-color:#292828;
+          text-align: center;
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 0px;
+          padding-right: 0px;">
+  <!--  <p>Find me on social media.</p>   -->
   <a href="https://www.linkedin.com/in/christian-tsalidis"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   <a href="https://twitter.com/c_tsalidis"><i class="fa fa-twitter w3-hover-opacity"></i></a>
   <a href="https://instagram.com/ctsalidis"><i class="fa fa-instagram w3-hover-opacity"></i></a>
   <a href="https://github.com/c-tsalidis"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <p> Website developed by:  <a href="#">Christian Tsalidis</a>. &copy; . All rights reserved.</p>
+  <p style="font-size: 15px;"> Website developed by:  <a href="https://c-tsalidis.github.io/" style="text-decoration: none;">Christian Tsalidis</a> &copy;  All rights reserved.</p>
 
 </footer>
+
+
+
 
 
 
@@ -337,6 +363,25 @@ function w3_close() {
 
 	*/
 
+
+// THIS IS FOR MAKING THE COLLAPSIBLE PANELS
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+// END OF COLLAPSIBLE PANELS
 
 
 
