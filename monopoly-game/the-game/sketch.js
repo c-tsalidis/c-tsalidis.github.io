@@ -194,12 +194,20 @@ function setup() // only runs once at the start of the program
 
 function draw()
 { 
+  resizeMainCanvas();
   // console.log("X: " + mouseX + "  |  Y: " + mouseY); // used for developing. Comes in handy when placing things in the coordinates I want 
   background(220);
   fill(200); // sets the color to fill shapes -->   fill(gray) --> let number specifying the value between white and black. In this case, 200
   textSize(20); // sets the size of the text --> 20
   imageMode(CENTER); // sets the position of images to center mode --> sets second and third parameters of image to the image's center polet
   showScene(); // function to show the scene
+}
+
+function resizeMainCanvas()
+{
+  let mainCanvas = document.getElementById("defaultCanvas0");
+  mainCanvas.style.width = 800;
+  mainCanvas.style.height = 800;
 }
 
 function showScene()
