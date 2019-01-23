@@ -43,6 +43,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: calibri, sans-serif;}
 }
 
 
+/* GETTING RID OF THE STARS BACKGROUND IF IT?S A MOBILE DEVICE*/
+@media screen and (max-width: 600px) {
+  #defaultCanvas0 {
+    display: none;
+  }
+  body {
+    background-color: black;
+  }
+}
+
+
 
 /* THIS IS THE MAIN CARD IN THE HOMEPAGE --> THE ONE WITH MY PIC AND NAME...*/
 /* Center website */
