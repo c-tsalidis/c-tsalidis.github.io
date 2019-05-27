@@ -121,8 +121,8 @@ function setup() // only runs once at the start of the program
   // boardImage = loadImage("data/board.jpg"); // the board image
 
   // the different buttons of the game
-  buyButton = new Button(width / 2 - 100, height / 2 - 100, 200, 200, "START"); // buy properties button
-  playButton = new Button(width / 2 - 100, 275, 200, 75, "PLAY"); // play button
+  buyButton = new Button(width / 2 - width / 10, height / 2 - height / 100, width / 5, height / 5, "START"); // buy properties button
+  playButton = new Button(width / 2 - width / 10, height / 3.6, width / 5, height / 13, "PLAY"); // play button
   diceButton = new Button(600, 700, 200, 75, "ROLL THE DICE"); // roll the dice button
   nextTurnButton = new Button(width / 2 - 100, 300, 200, 100, "NEXT TURN"); // next turn button --> only used when developing the game
   addHousesButton = new Button(200, 700, 200, 75, "BUY HOUSES"); // add houses button
@@ -157,6 +157,57 @@ function setup() // only runs once at the start of the program
   properties[4] = new Property(0, 800, "MUSEUM", 0, 4, 0); // jail
   properties[8] = new Property(0, 0, "GYM", 0, 8, 0); // lottery
   properties[12] = new Property(800, 0, "LIBRARY", 0, 12, 0); // go to jail
+
+
+
+
+
+
+/*
+  buyButton = new Button(width / 2 - width / 10, height / 2 - height / 100, width / 5, height / 5, "START"); // buy properties button
+  playButton = new Button(width / 2 - width / 10, height / 3.6, width / 5, height / 13, "PLAY"); // play button
+  diceButton = new Button(width / 1.66, height / 1.43, width / 5, height / 13, "ROLL THE DICE"); // roll the dice button
+  nextTurnButton = new Button(width / 2 - width / 10, height / 3.33, width / 5, height / 10, "NEXT TURN"); // next turn button --> only used when developing the game
+  addHousesButton = new Button(width / 5, height / 1.43, width / 5, height / 13, "BUY HOUSES"); // add houses button
+  /// addHousesButton = new Button(width / 5, height / 1.43, 200, 75, "BUY HOUSES"); // add houses button
+  // trade buttons
+  tradeButton = new Button(width / 2 - width / 10, height / 1.43, width / 5, height / 13, "TRADE"); // trade button
+  acceptTradeButton = new Button(width / 2 - width / 10, height / 2.66, width / 5, height / 13, "ACCEPT TRADE"); // accept trade button
+  increasePropertyTradePriceButton = new Button(width / 5, height / 1.43, width / 5, height / 13, "RAISE"); // increase property trade price
+  decreasePropertyTradePriceButton = new Button(width / 1.66, height / 1.43, width / 5, height / 13, "DECREASE"); // decrease property trade price
+
+  // the properties
+  // Property class has the following parameters: (x coordinate as let, y coordinate as let, name as let, price of the property as let, number of property as let, monopoly number as let)
+  // the main properties
+  properties[1] = new Property(width / 1.66, height / 1.25, "BARCELONA", 20, 1, 1); // Property 1 (P1)
+  properties[3] = new Property(width / 5, height / 1.25, "MADRID", 50, 3, 1); // Property 2 (P2)
+  properties[5] = new Property(0, height / 1.66, "AALBORG", 70, 5, 2); // Property 3 (P3)
+  properties[7] = new Property(0, height / 5, "COPENHAGEN", 100, 7, 2); // Property 4 (P4)
+  properties[9] = new Property(width / 5, 0, "BERLIN", 125, 9, 3); // Property 5 (P5)
+  properties[11] = new Property(width / 1.66, 0, "FRANKFURT", 150, 11, 3); // Property 6 (P6)
+  properties[13] = new Property(width / 1.25, height / 5, "LYON", 175, 13, 4); // Property 7 (P7)
+  properties[15] = new Property(width / 1.25, height / 1.66, "PARIS", 200, 15, 4); // Property 8 (P8)
+
+  // declaring and initializing the transport blocks
+  properties[2] = new Property(width / 2.5, height / 1.25, "TRANSPORT 1", 100, 2, 5); // t1
+  properties[10] = new Property(width / 2.5, 0, "TRASNPORT 2", 100, 10, 5); // t2
+
+  // declaring and initializing the maletenance blocks
+  properties[6] = new Property(0, height / 2.5, "WATER", 60, 6, 6); // q1
+  properties[14] = new Property(width / 1.25, height / 2.5, "ELECTRICITY", 60, 14, 6); // q2
+
+  // declaring and initializing the other blocks
+  properties[0] = new Property(width / 1.25, height / 1.25, "PARK", 0, 0, 0); // GO
+  properties[4] = new Property(0, height / 1.25, "MUSEUM", 0, 4, 0); // jail
+  properties[8] = new Property(0, 0, "GYM", 0, 8, 0); // lottery
+  properties[12] = new Property(width / 1.25, 0, "LIBRARY", 0, 12, 0); // go to jail
+
+*/
+
+
+
+
+
 
   // the properties buttons
   for (let i = 0; i < totalAmountOfBlocks; i++) // it goes through all the properties
@@ -194,7 +245,7 @@ function setup() // only runs once at the start of the program
 
 function draw()
 { 
-  resizeMainCanvas();
+  
   // console.log("X: " + mouseX + "  |  Y: " + mouseY); // used for developing. Comes in handy when placing things in the coordinates I want 
   background(220);
   fill(200); // sets the color to fill shapes -->   fill(gray) --> let number specifying the value between white and black. In this case, 200

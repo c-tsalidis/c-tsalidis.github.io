@@ -15,8 +15,11 @@ class Property
     this.tradePrice = (this.houseRent * 2);
     this.monopolyNumber = temp_monopoly_number;  // the monopoly number of the property. If a player has all of the properties that make a monopoly he can start adding houses
 
-    this.propertyWidth = 200; // width of the property
-    this.propertyHeight = 200; // height of the property
+    this.propertyWidth = 200;
+    this.propertyHeight = 200;
+
+    // this.propertyWidth = 1000 / 1.25 / 5; // width of the property
+    // this.propertyHeight = 1000 / 1.25 / 5; // height of the property
     this.houseCounter = 1; // the number of houses that the property has. By default it's only one
     this.ownedByPlayer = 0; // by default, the property is not owned by any of the players
     // this.propertyColor = 100; // the color of the property
