@@ -1,6 +1,6 @@
-html,body,h1,h2,h3,h4,h5,h6 {font-family: calibri, sans-serif;}
-	ul,ol,li,p {font-family: calibri, sans-serif;
-    font-size: 20px;
+html,body,h1,h2,h3,h4,h5,h6 {font-family: 'Montserrat', sans-serif;}
+	ul,ol,li,p {font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
     line-height: 1.5;}
 
 .w3-rightbar {
@@ -39,7 +39,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: calibri, sans-serif;}
 }
 
 .w3-circle {
-	border-style: solid;
+	border-style: hidden;
 }
 
 
@@ -195,7 +195,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: calibri, sans-serif;}
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 16px;
   width: 100%;
   border: none;
   text-align: left;

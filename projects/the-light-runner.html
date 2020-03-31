@@ -1,16 +1,11 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Light Runner Project</title>
 
-<!--
+  <!--
 A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
 
 The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
@@ -24,271 +19,245 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../style.css">
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126190307-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-126190307-1');
-</script>
-  <!--  End of Google analytics code  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 
 
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font: 400 15px/1.8 'Montserrat', sans-serif;
+      color: #777;
+    }
 
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Calibri-light", sans-serif; /*"Lato", sans-serif; */
-  color: #777;
-}
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3,
+    .bgimg-4,
+    .bgimg-5 {
+      position: relative;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
-  position: relative;
-  /* opacity: 0.65; */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    }
 
-}
-.bgimg-1 {
-  background-image: url("../Images/the-light-runner-menu.jpg");
-  min-height: 100%;
-}
+    .bgimg-1 {
+      background-image: url("../Images/the-light-runner-menu.jpg");
+      min-height: 100%;
+    }
 
-.bgimg-2 {
-  background-image: url("../Images/the-light-runner-1.jpg");
-  min-height: 400px;
-}
+    .bgimg-2 {
+      background-image: url("../Images/the-light-runner-1.jpg");
+      min-height: 400px;
+    }
 
-.bgimg-3 {
-  background-image: url("../Images/the-light-runner-2.jpg");
-  min-height: 400px;
-}
-.bgimg-4 {
-  background-image: url("../Images/the-light-runner-3.jpg");
-  min-height: 400px; 
-}
+    .bgimg-3 {
+      background-image: url("../Images/the-light-runner-2.jpg");
+      min-height: 400px;
+    }
 
-.bgimg-5 {
-  background-image: url("../Images/the-light-runner-4.jpg");
-  min-height: 400px; 
-}
+    .bgimg-4 {
+      background-image: url("../Images/the-light-runner-3.jpg");
+      min-height: 400px;
+    }
 
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
+    .bgimg-5 {
+      background-image: url("../Images/the-light-runner-4.jpg");
+      min-height: 400px;
+    }
 
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
 
-
-.content {
-  background-color:white;
-  text-align:center;
-  padding:50px 80px;
-  text-align: justify;
-}
+    .caption span.border {
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
 
 
-
-/*  cut out text  */
-.cutout-text {
+    .content {
       background-color: white;
-    color: black;
-    /* font-size: 10vw; */
-    font-size: 54px;
-    font-weight: bold;
-    margin: 0 auto;
-    padding: 10px;
-    width: 38%;
-    text-align: center;
-    position: absolute;
-    /* top: 50%; */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
-}
+      text-align: center;
+      padding: 50px 80px;
+      text-align: justify;
+    }
 
 
-h3 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111;
-}
 
-@media only screen and (max-device-width: 1024px) {
-/* Turn off parallax scrolling for tablets and phones */
-  /*
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
-  */
-  
-  /*
-  .bgimg-1 {
-    min-height: 500px;
-  }
-  */
-  .content {
-    padding: 50px 45px;
-  }
+    /*  cut out text  */
+    .cutout-text {
+      background-color: white;
+      color: black;
+      font-size: 54px;
+      font-weight: bold;
+      margin: 0 auto;
+      padding: 10px;
+      width: 38%;
+      text-align: center;
+      position: absolute;
+      /* top: 50%; */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: screen;
+    }
 
-  .cutout-text {
-    display: none;
-  }
 
-}
-</style>
+    h3 {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font: 20px 'Montserrat', sans-serif;
+      color: #111;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      .content {
+        padding: 50px 45px;
+      }
+
+      .cutout-text {
+        display: none;
+      }
+
+    }
+  </style>
 </head>
+
 <body>
 
+  <!-- Side navigation -->
+  <div class="w3-top">
+
+    <div id="menuOverlayNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <a href="../index.html">About Me</a>
+        <a href="../encoder-and-decoder-program-example.html">Encoder and Decoder Program</a>
+        <a href="../projects/the-light-runner.html">The Light Runner</a>
+        <a href="../monopoly-game/the-game/index.html">My Monopoly game on the web</a>
+        <a href="Laseraid/index.html">Laseraid</a>
+      </div>
+    </div>
 
 
-
-
-<!-- Side navigation -->
-<div class="w3-top">
-
-<div id="menuOverlayNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="../index.html">About Me</a>
-    <a href="../encoder-and-decoder-program-example.html">Encoder and Decoder Program</a>
-    <a href="../projects/the-light-runner.html">The Light Runner</a>
-    <a href="../monopoly-game/the-game/index.html">My Monopoly game on the web</a>
+    <div class="w3 -row w3-light-grey">
+      <div class="w3-col s12 w3-dark-grey w3-center" style="padding-bottom: 2px;">
+        <!-- <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776; </button>Christian Tsalidis</h1>  -->
+        <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav"
+            class="w3-button w3-xlarge" onclick="openNav()">&#9776; </button>Christian Tsalidis</h1>
+      </div>
+      <div class="w3-col s11 w3-dark-grey w3-center">
+        <!-- <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;">About Me</h1> -->
+      </div>
+    </div>
   </div>
-</div>
 
 
-<div class="w3 -row w3-light-grey">
-  <div class="w3-col s12 w3-dark-grey w3-center" style="padding-bottom: 2px;">
-    <!-- <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776; </button>Christian Tsalidis</h1>  -->
-    <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav" class="w3-button w3-xlarge" onclick="openNav()">&#9776; </button>Christian Tsalidis</h1>
+  <div class="bgimg-1">
+    <div class="caption">
+      <!-- <span class="border">SCROLL DOWN</span> -->
+    </div>
   </div>
-    <div  class="w3-col s11 w3-dark-grey w3-center">
-      <!-- <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;">About Me</h1> -->
+  <div style="position:relative;">
+    <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
+      <p class="cutout-text">THE LIGHT RUNNER</p>
+    </div>
   </div>
-</div>
-</div>
 
 
-
-
-
-
-
-
-<div class="bgimg-1">
-  <div class="caption">
-  <!-- <span class="border">SCROLL DOWN</span> -->
+  <div class="content" style="color: #777;background-color:white; text-align: center;">
+    <h3 style="text-align:center;"><a href="../The Light Runner WebGl/index.html" style="text-decoration: none;">TRY IT
+        OUT</a></h3>
+    <p>
+      You're a guy flying in a spaceship through an endless pipe, while avoiding obstacles.
+      There are 8 different scenes with different music audios so you never get bored.
+      The game was built with the Unity 3D engine.
+      <p>This game was made thanks to Jasper Flick's amazing <a
+          href="https://catlikecoding.com/unity/tutorials/swirly-pipe/" target="blanck">Swirly Pipe</a> tutorial. I went
+        through it and then proceeded to change it so that it fitted my interests. </p>
+      <p>It's available for Desktop, Android and the Web.</p>
   </div>
-</div>
-<div style="position:relative;">
-  <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
-    <p class="cutout-text">THE LIGHT RUNNER</p>
+
+  <div class="bgimg-2">
+    <div class="caption">
+      <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>  -->
+    </div>
   </div>
-</div>
 
-
-<div class="content" style="color: #777;background-color:white; text-align: center;">
-  <h3 style="text-align:center;"><a href="../The Light Runner WebGl/index.html" style="text-decoration: none;">TRY IT OUT</a></h3>
-  <p>
-    You're a guy flying in a spaceship through an endless pipe, while avoiding obstacles.
-    There are 8 different scenes with different music audios so you never get bored.
-    The game was built with the Unity 3D engine.
-    <p>This game was made thanks to Jasper Flick's amazing <a href="https://catlikecoding.com/unity/tutorials/swirly-pipe/" target="blanck">Swirly Pipe</a> tutorial. I went through it and then proceeded to change it so that it fitted my interests. </p>
-    <p>It's available for Desktop, Android and the Web.</p>
-</div>
-
-<div class="bgimg-2">
-  <div class="caption">
-  <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>  -->
+  <div style="position:relative;">
+    <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
+    </div>
   </div>
-</div>
 
-<div style="position:relative;">
-  <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
+  <div class="bgimg-5">
+    <div class="caption">
+      <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>  -->
+    </div>
   </div>
-</div>
 
-<div class="bgimg-5">
-  <div class="caption">
-  <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>  -->
+  <div style="position:relative;">
+    <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
+
+    </div>
   </div>
-</div>
 
-<div style="position:relative;">
-  <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
-      
+  <div class="bgimg-4">
+    <div class="caption">
+      <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>  -->
+    </div>
   </div>
-</div>
 
-<div class="bgimg-4">
-  <div class="caption">
-  <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>  -->
+  <div style="position:relative;">
+    <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
+      <p>This project was done from 2016 to 2017 (<a href="https://www.youtube.com/watch?v=n-RYhuh4wVM">Watch
+          trailer</a>). </p>
+      <p>What did I gain from it?</p>
+      <ul style="list-style-type: none;">
+        <li>Created a game by modifying a Unity 3D game tutorial (adapted to my needs and interests).
+        <li>Released the game to the Google Play App Store.</li>
+        <li>Brand name and logo development -- JustHavFun</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div style="position:relative;">
-  <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
-    <p>This project was done from 2016 to 2017 (<a href="https://www.youtube.com/watch?v=n-RYhuh4wVM">Watch trailer</a>). </p>
-    <p>What did I gain from it?</p>
-    <ul style="list-style-type: none;">
-    <li>Created a game by modifying a Unity 3D game tutorial (adapted to my needs and interests).
-    <li>Released the game to the Google Play App Store.</li>
-    <li>Brand name and logo development -- JustHavFun</li>
-    </ul>
+  <div class="bgimg-3">
+    <div class="caption">
+      <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>  -->
+    </div>
   </div>
-</div>
 
-<div class="bgimg-3">
-  <div class="caption">
-  <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>  -->
+  <div style="position:relative;">
+    <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
+      <p>The skills I acquired doing this project include</p>
+      <ul style="list-style-type: none;">
+        <li>Use of the game development tool Unity 3D.</li>
+        <li>Basics of C# programming language.</li>
+        <li>Managing Social media accounts.</li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<div style="position:relative;">
-  <div class="content" style="color:#ddd;background-color:#282E34; text-align: center;">
-    <p>The skills I acquired doing this project include</p>
-    <ul style="list-style-type: none;"> 
-    <li>Use of the game development tool Unity 3D.</li>
-    <li>Basics of C# programming language.</li>
-    <li>Managing Social media accounts.</li>
-    </ul>
+
+  <div class="bgimg-1">
+    <div class="caption">
+      <!-- <span class="border">COOL!</span>  -->
+    </div>
   </div>
-</div>
 
 
-<div class="bgimg-1">
-  <div class="caption">
-  <!-- <span class="border">COOL!</span>  -->
-  </div>
-</div>
-
-
-
-
-
-<footer class="content"
-        style="
+  <footer class="content" style="
           color:#ddd;
           background-color:#292828;
           text-align: center;
@@ -300,27 +269,22 @@ h3 {
           padding-bottom: 10px;
           padding-left: 0px;
           padding-right: 0px;">
-  <!--  <p>Find me on social media.</p>   -->
-  <a href="https://www.linkedin.com/in/christian-tsalidis"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <a href="https://twitter.com/c_tsalidis"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-  <a href="https://instagram.com/ctsalidis"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-  <a href="https://github.com/c-tsalidis"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <p style="font-size: 15px;"> Website developed by:  <a href="https://c-tsalidis.github.io/" style="text-decoration: none;">Christian Tsalidis</a> &copy;  All rights reserved.</p>
+    <!--  <p>Find me on social media.</p>   -->
+    <a href="https://www.linkedin.com/in/christian-tsalidis"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/c_tsalidis"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://instagram.com/ctsalidis"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://github.com/c-tsalidis"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <p style="font-size: 15px;"> Website developed by: <a href="https://c-tsalidis.github.io/"
+        style="text-decoration: none;">Christian Tsalidis</a> &copy; All rights reserved.</p>
 
-</footer>
-
-
-
+  </footer>
 
 
-
-<!-- menu overlay funcitionality  -->
-<script src="../menuOverlay.js"></script>
-<!--  end of menu overlay funcitionality -->
-
-
-
+  <!-- menu overlay funcitionality  -->
+  <script src="../menuOverlay.js"></script>
+  <!--  end of menu overlay funcitionality -->
 
 
 </body>
+
 </html>

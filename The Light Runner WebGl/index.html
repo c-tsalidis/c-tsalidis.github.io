@@ -1,114 +1,104 @@
 <!doctype html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>The Light Runner</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-    <script src="TemplateData/UnityProgress.js"></script>
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>The Light Runner</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+  <script src="TemplateData/UnityProgress.js"></script>
+</head>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126190307-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<body class="template">
 
-  gtag('config', 'UA-126190307-1');
-</script>
-  <!--  End of Google analytics code  -->
+  <!-- Christian Tsalidis' own code -->
 
-
-
-  </head>
-  <body class="template">
-
-<!-- Christian Tsalidis' own code -->
-
-    <!-- Side navigation -->
-<div class="w3-top">
-<div class="w3-sidebar mobile w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large"
-  onclick="w3_close()">Close &times;</button>
-  <a href="https://c-tsalidis.github.io/" class="w3-bar-item w3-button">About Me, ctsalidis</a>
-  <a href="https://c-tsalidis.github.io/encoder-and-decoder-program-example.html" class="w3-bar-item w3-button">Encoder and Decoder Program</a>
-</div>
-
-<div class="w3 -row w3-light-grey">
-  <div class="w3-col s1 w3-dark-grey w3-center" style="padding-bottom: 2px;">
-      <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
-  </div>
-</div>
-</div>
-
-<!-- End of Christian Tsalidis' own code -->
-
-    <div class="template-wrap clear">
-      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="400px"></canvas>
-      <br>
-      <div class="logo"></div>
-      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
-      <div class="title">The Light Runner</div>
+  <!-- Side navigation -->
+  <div class="w3-top">
+    <div class="w3-sidebar mobile w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
+      <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+      <a href="https://c-tsalidis.github.io/" class="w3-bar-item w3-button">About Me, ctsalidis</a>
+      <a href="https://c-tsalidis.github.io/encoder-and-decoder-program-example.html"
+        class="w3-bar-item w3-button">Encoder and Decoder Program</a>
     </div>
 
+    <div class="w3 -row w3-light-grey">
+      <div class="w3-col s1 w3-dark-grey w3-center" style="padding-bottom: 2px;">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- End of Christian Tsalidis' own code -->
 
-
-<!-- Christian Tsalidis' own code -->
-
-
-<script src="https://www.w3schools.com/lib/w3.js"></script>
-
-
-<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='89c6a58e29203912b3ba3b62c515d1cde00c5d62a14e130b2fbe97ad976ae236';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
-
-<script type="text/javascript">
-  
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-}
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-
-</script>
-
-<!-- End of Christian Tsalidis' own code -->
+  <div class="template-wrap clear">
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="400px"></canvas>
+    <br>
+    <div class="logo"></div>
+    <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen"
+        title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+    <div class="title">The Light Runner</div>
+  </div>
 
 
 
 
-
-    <script type='text/javascript'>
-  var Module = {
-    TOTAL_MEMORY: 268435456,
-    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    backgroundColor: "#222C36",
-    splashStyle: "Light",
-    dataUrl: "Release/The Light Runner WebGl.data",
-    codeUrl: "Release/The Light Runner WebGl.js",
-    asmUrl: "Release/The Light Runner WebGl.asm.js",
-    memUrl: "Release/The Light Runner WebGl.mem",
-  };
-</script>
-<script src="Release/UnityLoader.js"></script>
+  <!-- Christian Tsalidis' own code -->
 
 
-<!--  Stars background  -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
 
-<script src="stars-background/p5.min.js"></script>
-<script src="stars-background/addons/p5.dom.min.js"></script>
-<script src="stars-background/addons/p5.sound.min.js"></script>
-<script src="stars-background/the-background/sketch.js"></script>
 
-<!-- End of stars background -->
+  <script
+    async>(function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = '89c6a58e29203912b3ba3b62c515d1cde00c5d62a14e130b2fbe97ad976ae236'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');</script>
+
+  <script type="text/javascript">
+
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+
+  </script>
+
+  <!-- End of Christian Tsalidis' own code -->
 
 
 
 
-  </body>
+
+  <script type='text/javascript'>
+    var Module = {
+      TOTAL_MEMORY: 268435456,
+      errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+      compatibilitycheck: null,
+      backgroundColor: "#222C36",
+      splashStyle: "Light",
+      dataUrl: "Release/The Light Runner WebGl.data",
+      codeUrl: "Release/The Light Runner WebGl.js",
+      asmUrl: "Release/The Light Runner WebGl.asm.js",
+      memUrl: "Release/The Light Runner WebGl.mem",
+    };
+  </script>
+  <script src="Release/UnityLoader.js"></script>
+
+
+  <!--  Stars background  -->
+
+  <script src="stars-background/p5.min.js"></script>
+  <script src="stars-background/addons/p5.dom.min.js"></script>
+  <script src="stars-background/addons/p5.sound.min.js"></script>
+  <script src="stars-background/the-background/sketch.js"></script>
+
+  <!-- End of stars background -->
+
+
+
+
+</body>
+
 </html>
