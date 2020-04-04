@@ -55,12 +55,8 @@
 
         <div class="w3 -row w3-light-grey">
             <div class="w3-col s12 w3-dark-grey w3-center" style="padding-bottom: 2px;">
-                <!-- <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776; </button>Christian Tsalidis</h1>  -->
                 <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav"
                         class="w3-button w3-xlarge" onclick="openNav()">&#9776; </button>Christian Tsalidis</h1>
-            </div>
-            <div class="w3-col s11 w3-dark-grey w3-center">
-                <!-- <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;">About Me</h1> -->
             </div>
         </div>
     </div>
@@ -68,7 +64,10 @@
 
     <div style="margin-top: 85px"></div>
     <h1>Snake Game</h1>
-    <p id="score">Score = </p>
+    <div style="width: 15%; margin: 0 auto">
+        <p id="score" style="float: left;">Score = </p>
+        <p id="highscore" style="float: right;">Highscore = 0</p>
+    </div>
 
     <!-- Menu overlay functionality -->
     <script>
@@ -85,6 +84,7 @@
 
         // score text
         let scoreText = document.getElementById("score");
+        let highscoreText = document.getElementById("highscore");
 
         // Snake game
         let xDirection = 1, yDirection = 1; // x and y directions of the snake (-1 || 1)
@@ -98,29 +98,35 @@
 
         let xCounter = 0, yCounter = 0; // head grid counters --> to move based on the grid system
 
+        let highscore = 0;
+        let originalSpeed = 15;
+        let speed = 15; // framerate
+        let level = 1;
+        let previousSavedScore = 1;
+
         // objects
         Grid = {
             size: 0,
             x: [],
             y: [],
-            // constructor
-            create: function (blockSize) {
-                this.size = blockSize;
+
+            create: function (_size) {
+                this.size = _size;
                 this.x = [], this.y = [];
-                // this.x.length = width / this.size;
-                // this.y.length = height / this.size;
 
                 stroke(255);
                 // initialize each element from the x and y axis
-                for (let i = 0; i < (width / this.size); i++) {
+                for (let i = 0; i < Math.floor(width / this.size); i++) {
                     this.x.push(i * this.size);
                 }
-                for (let i = 0; i < (height / this.size); i++) {
+                for (let i = 0; i < Math.floor(height / this.size); i++) {
                     this.y.push(i * this.size);
                 }
             },
+
             display: function () {
                 stroke(255);
+                strokeWeight(0.5);
                 // initialize each element from the x axis
                 for (let i = 0; i < this.x.length; i++) {
                     line(this.x[i], 0, this.x[i], height);
@@ -162,8 +168,7 @@
             }
         }
 
-
-        // constructor
+        // body part constructor
         function BodyPart(_x, _y) {
             this.x = _x;
             this.y = _y;
@@ -173,6 +178,7 @@
         Food = {
             x: 0,
             y: 0,
+
             create: function () {
                 this.x = grid.x[grid.x.length / 2];
                 this.y = grid.y[grid.y.length / 2];
@@ -197,9 +203,12 @@
                     else b = new BodyPart(body[body.length - 1].x + size * (-xDirection), body[body.length - 1].y + size * (-yDirection));
                     body.push(b);
                     bodyCount++;
-                    // console.log(b.x, head.x, b.y, head.y);
-                    // console.log("Eaten: " + bodyCount);
                     scoreText.textContent = "Score = " + bodyCount;
+                    if (bodyCount > highscore) {
+                        highscore = bodyCount;
+                        highscoreText.textContent = "Highscore = " + highscore;
+                        if(score >= (previousSavedScore + 10)) speed++;
+                    }
                 }
             }
         }
@@ -209,14 +218,14 @@
         let food = Food;
 
         function setup() {
-            // createCanvas(displayWidth, displayHeight);
+            // createCanvas(displayWidth - displayWidth / Math.floor(displayWidth / size), displayHeight - displayHeight / Math.floor(displayHeight / size));
+            // createCanvas(displayWidth, displayHeight - displayHeight / 3);
             createCanvas(600, 600);
             background(0);
             noStroke();
             grid.create(size);
             head.create();
             food.create();
-            frameRate(45);
             scoreText.textContent = "Score = 0";
         }
 
@@ -224,6 +233,7 @@
             background(0);
             fill(255);
             smooth(8);
+            frameRate(speed);
 
             if (isDead) gameOver();
 
@@ -249,7 +259,6 @@
                 }
             }
 
-
             // if the head hits any part of its body, it's game over
             for (let i = 1; i < body.length; i++) {
                 let b = body[i];
@@ -260,7 +269,7 @@
 
             food.display();
             food.check();
-            // grid.display();
+            grid.display();
         }
 
         function gameOver() {
@@ -279,22 +288,24 @@
             xCounter = 0;
             yCounter = 0;
             scoreText.textContent = "Score = 0";
+            speed = originalSpeed;
         }
 
         function keyPressed() {
-            if (keyCode == UP_ARROW) {
+            // keycodes reference --> http://keycode.info/
+            if (keyCode == UP_ARROW || keyCode == 87) {
                 yDirection = -1;
                 isXAxis = false;
             }
-            if (keyCode == DOWN_ARROW) {
+            if (keyCode == DOWN_ARROW || keyCode == 83) {
                 yDirection = 1;
                 isXAxis = false;
             }
-            if (keyCode == LEFT_ARROW) {
+            if (keyCode == LEFT_ARROW || keyCode == 65) {
                 xDirection = -1;
                 isXAxis = true;
             }
-            if (keyCode == RIGHT_ARROW) {
+            if (keyCode == RIGHT_ARROW || keyCode == 68) {
                 xDirection = 1;
                 isXAxis = true;
             }
