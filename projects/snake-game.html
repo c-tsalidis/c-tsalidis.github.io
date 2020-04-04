@@ -191,6 +191,11 @@
             changePosition: function () {
                 let rx = Math.floor(random(0, grid.x.length));
                 let ry = Math.floor(random(0, grid.y.length));
+                // check if any other body part or head is already there
+                if(head.x == grid.x[rx] && head.y == grid.y[ry]) this.changePosition();
+                for(let i = 0; i < body.length; i++) {
+                    if(body[i].x == grid.x[rx] && body[i].y == grid.y[ry]) this.changePosition();
+                }
                 this.x = grid.x[rx];
                 this.y = grid.y[ry];
             },
