@@ -1,0 +1,159 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Montserrat font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- P5.js code  -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+
+    <!-- W3CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Menu overlay css -->
+    <link rel="stylesheet" href="../menuOverlay.css">
+
+    <title>Edges Filter</title>
+    <style>
+        .body,
+        h1,
+        p {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .w3-topbar {
+            border-top: 3px solid #292828 !important;
+        }
+
+        #defaultCanvas0 {
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top navigation -->
+    <div class="w3-top">
+        <div id="menuOverlayNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="../index.html">About Me</a>
+                <a href="../encoder-and-decoder-program-example.html">Encoder and Decoder Program</a>
+                <a href="../projects/the-light-runner.html">The Light Runner</a>
+                <a href="../monopoly-game/the-game/index.html">My Monopoly game on the web</a>
+                <a href="../Laseraid/index.html">Laseraid</a>
+                <a href="../projects/snake-game.html">Snake Game</a>
+            </div>
+        </div>
+
+
+        <div class="w3 -row w3-light-grey">
+            <div class="w3-col s12 w3-dark-grey w3-center" style="padding-bottom: 2px;">
+                <h1 style="margin-top: 0px;margin-bottom: 0px;background-color: #292828;"><button id="openNav"
+                        class="w3-button w3-xlarge" onclick="openNav()">&#9776; </button>Christian Tsalidis</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="margin-top: 85px"></div>
+    <h1>Edges filter</h1>
+
+    <!-- Menu overlay functionality -->
+    <script>
+        function openNav() {
+            document.getElementById("menuOverlayNav").style.height = "100%";
+        }
+        function closeNav() {
+            document.getElementById("menuOverlayNav").style.height = "0%";
+        }
+    </script>
+
+    <script>
+        // camera variables
+        let videoCapture;
+        let snapImg;
+        let button;
+
+        // sobel filter for detecting edges --> both horizontally and vertically
+        let kernelX = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]];
+        let kernelY = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]];
+        let pixelValues;
+        let median;
+
+        function setup() {
+            createCanvas(320 * 3, 240 * 3);
+            pixelDensity(1);
+            background(0);
+            videoCapture = createCapture(VIDEO);
+            videoCapture.size(width, height);
+            snapImg = createImage(videoCapture.width, videoCapture.height);
+            button = createButton('snap');
+            button.mousePressed(takeSnap);
+        }
+
+        function draw() {
+            
+        }
+
+        function takeSnap() {
+            snapImg = videoCapture.get();
+            applyFilter();
+        }
+
+        function applyFilter() {
+            image(snapImg, 0, 0); // Displays the image from point (0,0)
+            snapImg.loadPixels();
+            // Create an opaque image of the same size as the original
+            let outputImageV = createImage(snapImg.width, snapImg.height);
+            let outputImageH = createImage(snapImg.width, snapImg.height);
+            let finalOutputImage = createImage(snapImg.width, snapImg.height);
+            loadPixels();
+            // Loop through every pixel in the image to get the pixel values.
+            for (let y = 1; y < snapImg.height - 1; y++) { // skip the edges - top and bottom
+                for (let x = 1; x < snapImg.width - 1; x++) { // skip the edges - left and right
+                    let sumV = 0;
+                    let sumH = 0;
+                    /*
+                    for (let ky = -1; ky <= 1; ky++) {
+                        for (let kx = -1; kx <= 1; kx++) {
+                            // get the neighbouring points
+                            let pos = ((x + kx) + (y + ky) * snapImg.width) * 4;
+                            let r = snapImg.pixels[pos + 0];
+                            let g = snapImg.pixels[pos + 1];
+                            let b = snapImg.pixels[pos + 2];
+                            let a = snapImg.pixels[pos + 3];
+                            let brightness = (r + g + b) / 3;
+                            sumV += kernelX[ky + 1][kx + 1] * brightness;
+                            sumH += kernelY[ky + 1][kx + 1] * brightness;
+                        }
+                    }
+                    */
+                    let index = (y * snapImg.width + x) * 4;
+                    outputImageV.pixels[index + 0] = snapImg.pixels[index];
+                    outputImageV.pixels[index + 1] =  snapImg.pixels[index];
+                    outputImageV.pixels[index + 2] =  snapImg.pixels[index];
+                    outputImageV.pixels[index + 3] = 255;
+                    // outputImageH.pixels[y * snapImg.width + x] = color(sumH, sumH, sumH);
+                    // finalOutputImage.pixels[y * snapImg.width + x] = color(sumV + sumH, sumV + sumH, sumV + sumH);
+                }
+            }
+            outputImageV.updatePixels();
+            image(outputImageV, snapImg.width, 0); // Draw the new image
+            // outputImageH.updatePixels();
+            // image(outputImageH, snapImg.width * 2, 0); // Draw the new image
+            // finalOutputImage.updatePixels();
+            // image(finalOutputImage, snapImg.width, snapImg.height + 50); // Draw the new image
+
+            image(snapImg, 0, 0, 80, 60);
+        }
+    </script>
+</body>
+
+</html>

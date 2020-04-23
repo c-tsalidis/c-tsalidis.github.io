@@ -11,13 +11,13 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="text-typing-animation.css"> -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-	<!-- Side navigation -->
+	<!-- Top navigation -->
 	<div class="w3-top">
 		<div id="menuOverlayNav" class="overlay">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -54,7 +54,7 @@
 		<!-- The Grid -->
 		<div class="w3-row-padding">
 
-			<div class="w3-white w3-card-4">
+			<div>
 				<div class="w3-display-container" style="padding: 30px">
 					<div style="width: 215px;height: auto;margin: 0 auto; position: relative;">
 						<div style="text-align: center;">
@@ -77,12 +77,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="row" style="text-align: center;">
+					<div class="row w3-white w3-card-4" style="text-align: center;">
 						<div>
 							<div>
 								<h4 style="text-shadow: 5px 7px 5px darkgrey">Aspiring new technology developer</h4>
 								<!-- Style color recommended: style="color: #4F84C4;-->
-								<p>Motivated, excellency-seeker, eager to work student</p>
+								<p class="typewriter" id="typewriter">Motivated, excellency-seeker, eager to work student</p>
 							</div>
 						</div>
 						<div>
@@ -316,17 +316,17 @@
 
 
 				<footer class="content" style="
-          color:#ddd;
-          background-color:#292828;
-          text-align: center;
-          position: fixed;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-left: 0px;
-          padding-right: 0px;">
+							color:#ddd;
+							background-color:#292828;
+							text-align: center;
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							padding-top: 10px;
+							padding-bottom: 10px;
+							padding-left: 0px;
+							padding-right: 0px;">
 					<!--  <p>Find me on social media.</p>   -->
 					<a href="https://www.linkedin.com/in/christian-tsalidis"><i
 							class="fa fa-linkedin w3-hover-opacity"></i></a>
@@ -338,38 +338,12 @@
 
 				</footer>
 
-
-
-
-
-
 				<script src="https://www.w3schools.com/lib/w3.js"></script>
 
-
-				<script
-					async>(function (s, u, m, o, j, v) { j = u.createElement(m); v = u.getElementsByTagName(m)[0]; j.async = 1; j.src = o; j.dataset.sumoSiteId = '89c6a58e29203912b3ba3b62c515d1cde00c5d62a14e130b2fbe97ad976ae236'; v.parentNode.insertBefore(j, v) })(window, document, 'script', '//load.sumo.com/');</script>
-
-
-
-
 				<script type="text/javascript">
-
-					/*
-				function w3_open() {
-					document.getElementById("mySidebar").style.display = "block";
-				}
-				function w3_close() {
-					document.getElementById("mySidebar").style.display = "none";
-				}
-				
-					*/
-
-
 					// THIS IS FOR MAKING THE COLLAPSIBLE PANELS
-
 					var acc = document.getElementsByClassName("accordion");
 					var i;
-
 					for (i = 0; i < acc.length; i++) {
 						acc[i].addEventListener("click", function () {
 							this.classList.toggle("active");
@@ -381,20 +355,11 @@
 							}
 						});
 					}
-
-// END OF COLLAPSIBLE PANELS
-
-
-
 				</script>
-
-
 
 				<!-- menu overlay funcitionality  -->
 				<script src="menuOverlay.js"></script>
 				<!--  end of menu overlay funcitionality -->
-
-
 
 				<!--  Stars background  -->
 				<script src="stars-background/p5.min.js"></script>
@@ -403,6 +368,30 @@
 				<script src="stars-background/the-background/sketch.js"></script>
 				<!-- End of stars background -->
 
+				<!-- Typwriter functionality -->
+				<script>
+					let counter = 0;
+					let element = document.getElementById("typewriter");
+					let txt = element.textContent;
+					element.innerHTML = "";
+					let speed = 100;
+                    let showCursor = true;
+					typeWriter();
+					function typeWriter() {
+                        // if(counter % 2 == 0) showCursor = true;
+                        // else showCursor = false;
+                        // if(showCursor) element.style = "border-right: .15em solid black; width: 50%; margin: auto; white-space: nowrap;";
+                        // else element.style = "border-right: none;";
+						if (counter < txt.length) {
+                            showCursor = !showCursor;
+							element.innerHTML += txt.charAt(counter);
+							counter++;
+							setTimeout(typeWriter, speed);
+						}
+					}
+
+				</script>
+				<!-- End of typewriter functionality -->
 
 
 </body>
