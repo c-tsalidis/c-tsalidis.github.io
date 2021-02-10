@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: c-tsalidis.github.io
+Token: 1f4bd773055189506252fc39e76f38dc76d80b00239222be9a674ef033318d4f
