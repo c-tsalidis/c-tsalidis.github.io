@@ -24,6 +24,7 @@
         p {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
+            color: white;
         }
 
         .w3-topbar {
@@ -33,15 +34,15 @@
         #defaultCanvas0 {
             margin: auto;
             display: block;
-            /* position: fixed; */
-            /* z-index: -1; */
+            position: fixed;
+            z-index: -1;
         }
     </style>
 </head>
 
 <body>
     <!-- Top navigation -->
-    <div class="w3-top">
+    <div class="w3-top" style="display: none;">
         <div id="menuOverlayNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
@@ -64,8 +65,8 @@
     </div>
 
 
-    <div style="margin-top: 85px"></div>
-    <h1 style="z-index: 100;">Snake Game</h1>
+    <!-- <div style="margin-top: 4%"></div> -->
+    <!-- <h1 style="z-index: 100;">Snake Game</h1> -->
     <div style="width: 15%; margin: 0 auto">
         <p id="score" style="float: left;">Score = </p>
         <p id="highscore" style="float: right;">Highscore = 0</p>
@@ -229,7 +230,8 @@
         function setup() {
             // createCanvas(displayWidth - displayWidth / Math.floor(displayWidth / size), displayHeight - displayHeight / Math.floor(displayHeight / size));
             // createCanvas(displayWidth, displayHeight - displayHeight / 3);
-            createCanvas(displayWidth - displayWidth / 2, displayHeight - displayHeight / 2);
+            // createCanvas(displayWidth - displayWidth / 2, displayHeight - displayHeight / 2);
+            createCanvas(displayWidth, displayHeight);
             // createCanvas(600, 600);
             background(0);
             noStroke();
