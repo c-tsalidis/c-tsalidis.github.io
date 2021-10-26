@@ -33,6 +33,8 @@
         #defaultCanvas0 {
             margin: auto;
             display: block;
+            /* position: fixed; */
+            /* z-index: -1; */
         }
     </style>
 </head>
@@ -63,7 +65,7 @@
 
 
     <div style="margin-top: 85px"></div>
-    <h1>Snake Game</h1>
+    <h1 style="z-index: 100;">Snake Game</h1>
     <div style="width: 15%; margin: 0 auto">
         <p id="score" style="float: left;">Score = </p>
         <p id="highscore" style="float: right;">Highscore = 0</p>
@@ -103,6 +105,8 @@
         let speed = 15; // framerate
         let level = 1;
         let previousSavedScore = 1;
+
+        let touchX = 0, touchY = 0, prevTouchX = 0, prevTouchY = 0;
 
         // objects
         Grid = {
@@ -225,7 +229,8 @@
         function setup() {
             // createCanvas(displayWidth - displayWidth / Math.floor(displayWidth / size), displayHeight - displayHeight / Math.floor(displayHeight / size));
             // createCanvas(displayWidth, displayHeight - displayHeight / 3);
-            createCanvas(600, 600);
+            createCanvas(displayWidth - displayWidth / 2, displayHeight - displayHeight / 2);
+            // createCanvas(600, 600);
             background(0);
             noStroke();
             grid.create(size);
@@ -313,6 +318,33 @@
             if (keyCode == RIGHT_ARROW || keyCode == 68) {
                 xDirection = 1;
                 isXAxis = true;
+            }
+        }
+
+        function touchStarted() {
+            touchX = mouseX;// % 255;
+            touchY = mouseY;// % 255;
+        }
+
+        function touchEnded() {
+            console.log("Touch has finished");
+            // get the difference between values in both axis. 
+            //  --> The one with higher difference is the one that will apply
+            let diffX = touchX - mouseX;
+            let diffY = touchY - mouseY;
+            if(Math.abs(diffX) > Math.abs(diffY)) {
+                // going either left or right
+                isXAxis = true;
+                if(diffX > 0)  { xDirection = -1; }
+                else { xDirection = 1; }
+                // console.log("Is x axis: " + diffX);
+            }
+            else {
+                // going either up or down
+                // console.log("Is y axis: " + diffX);
+                isXAxis = false;
+                if(diffY > 0) {yDirection = -1;}
+                else {yDirection = 1;}
             }
         }
 
