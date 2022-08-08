@@ -1,10 +1,14 @@
 // on appear animation
 var onAppearProjects = [];
 var onAppearMain = [];
+var fixedHeroText;
 
 // ref --> https://codepen.io/zvona/pen/RwyyNK
 
 document.addEventListener("DOMContentLoaded", function() {
+    // fixedHeroText = document.getElementsByClassName("hero-sticky")[0];
+    // fixedHeroText.style.display = "none";
+
     onAppearProjects = [].map.call(document.querySelectorAll(".onAppear"), function(item ) {
         return item;
     });
@@ -15,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 window.addEventListener("scroll", function() {
+    // scrollFunction();
     checkScroll(onAppearProjects, "visible-projects");
     checkScroll(onAppearMain, "visible-main");
 }, false);
@@ -41,4 +46,19 @@ function calculateScrollToAppear(elem) {
     else {
         return false;
     }
+}
+
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+function scrollFunction() {
+  if (document.body.scrollTop > (window.innerHeight - 20)) { // || document.documentElement.scrollTop > 20) {
+      fixedHeroText.style.display = "block";
+      // fixedHeroText.classList.remove("hero-sticky");
+      // document.getElementsByClassName("hero-text").style.top = "0";
+      // document.getElementById("hero-text").style.top = "50%";
+    } else {
+    fixedHeroText.style.display = "none";
+      // fixedHeroText.classList.add("hero-sticky");
+    // document.getElementById("hero-text").style.top = "50%";
+    // document.getElementsByClassName("hero-text").style.top = "-50px";
+  }
 }

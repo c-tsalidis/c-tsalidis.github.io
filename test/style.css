@@ -24,6 +24,39 @@ h1, h2, h3, h4, h5, h6 {
     */
 }
 
+.hero-text {
+    /*
+    align-self: flex-start;
+    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space:nowrap;
+    top: 50%;
+    left: 50%;
+    color: white;
+}
+
+.hero-sticky {
+    /*
+    top: 0%;
+    top: 0;
+    left: 50%;
+    */
+    align-self: flex-start;
+    text-align: center;
+    
+    position: fixed;
+    /*
+    position: -webkit-sticky;
+    position: sticky;
+    transform: translate(-50%, 0%);
+    */
+}
+
 .main-keywords-1 {
     padding: 5%;
     padding-bottom: 4%;
@@ -75,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 .overlay {
     position: absolute;
     background-color: #e6e6e6;
-    overflow: hidden;
+    /*overflow: hidden;*/
     transform: scale(0);
     transition: .3s ease;
 }
