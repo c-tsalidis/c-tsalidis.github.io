@@ -124,6 +124,17 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 400px;
 }
 
+
+.onAppear {
+    transition: transform 1000ms;
+    transform: translate3d(0px 0px, 0px);
+  }
+  
+  .visible {
+    transform: translate3d(-100px, 0px, 0px);
+  }
+
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1400px) {
     .bgimg-1, .bgimg-2, .bgimg-3 {
