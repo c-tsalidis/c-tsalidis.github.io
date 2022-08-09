@@ -1,0 +1,232 @@
+html,body,h1,h2,h3,h4,h5,h6 {font-family: 'Montserrat', sans-serif;}
+	ul,ol,li,p {font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;}
+
+.w3-rightbar {
+    border-right: 6px solid #292828!important;
+}
+
+.w3-leftbar {
+    /* border-left: 6px solid #292828!important; */
+    border-left: 6px solid gray!important;
+}
+
+.w3-bottombar {
+    border-bottom: 3px solid #292828!important;
+}
+.w3-topbar {
+    border-top: 3px solid #292828!important;
+}
+
+.w3-light-grey {
+	color: white;
+}
+
+.w3-dark-grey, .w3-hover-dark-grey:hover, .w3-dark-gray, .w3-hover-dark-gray:hover {
+    color: #fff!important;
+    background-color: #292828!important;
+}
+
+.w3-white {
+	background-color: #383838;
+	color: white;
+}
+
+
+#defaultCanvas0 {
+	left: 0px;top: 0px;z-index: -1;position: fixed;
+}
+
+.w3-circle {
+	border-style: hidden;
+}
+
+
+/* GETTING RID OF THE STARS BACKGROUND IF IT?S A MOBILE DEVICE*/
+@media screen and (max-width: 600px) {
+  #defaultCanvas0 {
+    display: none;
+  }
+  body {
+    background-color: black;
+  }
+}
+
+
+
+/* THIS IS THE MAIN CARD IN THE HOMEPAGE --> THE ONE WITH MY PIC AND NAME...*/
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: center;
+  width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+/*  END OF THE MAIN CARD OF THE HOMEPAGE  */
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  -webkit-border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+/*   THIS IS FOR THE MENU OVERLAY --> if the menu bars are clicked, it places the overlay on top of the rest from top to bottom of the page    */
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+/*   END OF MENU OVERLAY    */
+
+
+
+
+/* THIS IS FOR THE ACCORDION --> collapsible panels */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B'; /* Unicode character for "plus" sign (+) */
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212"; /* Unicode character for "minus" sign (-) */
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: black;
+}
+
+/* END OF THE ACCORDION   */
